@@ -1,10 +1,13 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "blog",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Aaron Schmidt's personal website and blog",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Aaron Schmidt",
   "dependencies": {
+    "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.14",
+    "babel-plugin-emotion": "^10.0.14",
     "gatsby": "^2.13.42",
     "gatsby-image": "^2.2.7",
     "gatsby-plugin-manifest": "^2.2.4",
@@ -19,10 +22,15 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "babel-preset-gatsby": "^0.2.8",
+    "eslint-config-react-app": "^4.0.1",
+    "eslint-plugin-emotion": "^10.0.14",
     "prettier": "^1.18.2"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "aaron schmidt",
+    "portfolio"
   ],
   "license": "MIT",
   "scripts": {

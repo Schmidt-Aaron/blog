@@ -1,0 +1,20 @@
+{
+  "env": {
+    "production": {
+      "plugins": ["emotion", "@babel/plugin-proposal-optional-chaining"],
+      "presets": [
+        [
+          "babel-preset-gatsby",
+          {
+            "targets": {
+              "browsers": [">0.25%", "not dead"]
+            }
+          }
+        ]
+      ]
+    },
+    "development": {
+      "plugins": [["emotion", { "sourceMap": true }]]
+    }
+  }
+}
