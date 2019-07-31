@@ -4,4 +4,32 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
+// const path = require("path")
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const result = await graphql(`
+    query {
+      allMdx {
+        nodes {
+          frontmatter {
+            slug
+          }
+        }
+      }
+    }
+  `)
+  if (result.errors) {
+    reporter.panic('🚨  ERROR: Loading "createPages" query', result.errors)
+  }
+  // create blog post pages
+  const posts = result.data.allMdx.nodes
+
+  posts.forEach(post => {
+    actions.createPage({
+      path: post.frontmatter.slug,
+      component: require.resolve("./src/templates/post.js"), // layout
+      context: {
+        slug: post.frontmatter.slug,
+      },
+    })
+  })
+}

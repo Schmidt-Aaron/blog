@@ -1,7 +1,8 @@
 // enable process.env variables
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+// commented out b/c breaks build
+// require("dotenv").config({
+//   path: `.env.${process.env.NODE_ENV}`,
+// })
 
 module.exports = {
   siteMetadata: {
@@ -16,6 +17,13 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts/`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -33,6 +41,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve("./src/components/layout.js"),
+        },
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
