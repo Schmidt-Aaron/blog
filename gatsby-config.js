@@ -12,6 +12,9 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-emotion`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -26,8 +29,6 @@ module.exports = {
         path: `${__dirname}/src/posts/`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -40,13 +41,23 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
           default: require.resolve("./src/components/layout.js"),
         },
+        plugins: [`gatsby-remark-images`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 960,
+              quality: 70,
+              withWebp: true,
+            },
+          },
+        ],
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

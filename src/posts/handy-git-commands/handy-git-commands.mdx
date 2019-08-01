@@ -1,0 +1,46 @@
+---
+title: "Handy Git Commands"
+date: 8-1-2019
+---
+
+This document is a reference of useful git commands.
+
+## Git Branch
+
+It is common to create a new branch for each new feature, or bug fix. This allows all the code related to fixed that specific bug, or adding that feature to be easily viewed.
+
+To create a new branch called 'branch-name':
+
+```Shell
+git branch 'branch-name'
+```
+
+note: the quotes are not required
+
+To display the list of current branches (your current branch will be highlighted by an \*):
+
+```Shell
+git branch
+```
+
+To switch to a differnt branch:
+
+```Shell
+git checkout 'other-branch'
+```
+
+## Merge branches
+
+To merge a branch into your current branch, first make sure you are on the branch you want the changes to be merge into. e.g if you have two branches named 'master' and 'branch-name' and want to merge the changes made in 'branch-name' into the master branch you would want to verify that you are currently in the master branch.
+
+```Shell
+git merge 'branch-name'
+```
+
+## Going to documentation page for a specific git commands
+
+You can quickly open a browser page the the docs page for any individual git command by adding the --help flag to the end of it.
+
+```Shell
+git branch --help
+```
