@@ -1,3 +1,8 @@
+/**
+ *
+ * hook to pull in our mdx for our posts page
+ *
+ */
 import { graphql, useStaticQuery } from "gatsby"
 
 const usePosts = () => {
@@ -8,6 +13,14 @@ const usePosts = () => {
           frontmatter {
             title
             slug
+            alt
+            image {
+              sharp: childImageSharp {
+                fluid(quality: 80, maxWidth: 100, maxHeight: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
           }
           excerpt
         }
@@ -18,6 +31,8 @@ const usePosts = () => {
   return data.allMdx.nodes.map(post => ({
     title: post.frontmatter.title,
     slug: post.frontmatter.slug,
+    image: post.frontmatter.image,
+    alt: post.frontmatter.alt,
     excerpt: post.excerpt,
   }))
 }
