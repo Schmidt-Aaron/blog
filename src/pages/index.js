@@ -8,7 +8,7 @@ import Hero from "../components/hero"
 
 const IndexPage = () => (
   <>
-    {/* <Hero /> */}
+    <Hero />
     <Layout>
       <SEO title="Home" />
       <h1>Hi people</h1>
