@@ -3,7 +3,7 @@ title: "Handy Git Commands"
 date: 8-1-2019
 ---
 
-This document is a reference of useful git commands.
+This document is a reference of useful git commands. I will add more as I need them.
 
 ## Git Branch
 
@@ -23,7 +23,7 @@ To display the list of current branches (your current branch will be highlighted
 git branch
 ```
 
-To switch to a differnt branch:
+To switch to a different branch:
 
 ```Shell
 git checkout 'other-branch'
@@ -32,6 +32,8 @@ git checkout 'other-branch'
 ## Merge branches
 
 To merge a branch into your current branch, first make sure you are on the branch you want the changes to be merge into. e.g if you have two branches named 'master' and 'branch-name' and want to merge the changes made in 'branch-name' into the master branch you would want to verify that you are currently in the master branch.
+
+Note that any local commits will need to be synced before git will allow a merge between branches. If you have any merge conflicts they will need to be resolved before you can commit the newly merged branch.
 
 ```Shell
 git merge 'branch-name'

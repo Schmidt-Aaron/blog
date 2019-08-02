@@ -41,7 +41,7 @@ Note: This guide assumes that the images are located in the same directory relat
   npm i gatsby-remark-images
 ```
 
-- Configure your gatsby-plugin-mdx pluing in your gatsby-config.js file. If you haven't already installed gatsby-plugin-mdx instructions to do so are at the start of this post. There are a ton of customizations you can do so I suggest reading through the documentation. Two options that I found especially useful were maxWidth and quality.
+- Configure your gatsby-plugin-mdx plugin in your gatsby-config.js file. If you haven't already installed gatsby-plugin-mdx instructions to do so are at the start of this post. There are a ton of customizations you can do so I suggest reading through the documentation. Two options that I found especially useful were maxWidth and quality.
 
 ```Javascript
 // gatsby-config.js
@@ -117,7 +117,7 @@ author: John Smith
 
 - Restart your dev server for the changes to your config file to come into effect.
 
-Viola! Now you should be seeing your image and it should also be fully optimized with gatsby-image. There are a ton of custimizable options
+Viola! Now you should be seeing your image and it should also be fully optimized with gatsby-image. There are a ton of customizable options
 
 - (Optional) Add relative path to an image in your post frontmatter this step is useful if you want to query the image via graphql elsewhere
 
@@ -138,7 +138,7 @@ image: ./your-image-here <!--- relative path to image --->
   npm i gatsby-image
 ```
 
-This plugin requires gatsby-transformer-sharp and gatsby-plugin-sharp to function. These are both common plugins and it is likely that you already have them installed and configured. If not, the neccesary steps to set them up are below.
+This plugin requires gatsby-transformer-sharp and gatsby-plugin-sharp to function. These are both common plugins and it is likely that you already have them installed and configured. If not, the necessary steps to set them up are below.
 
 ```Shell
 npm i gatsby-transformer-sharp gatsby-plugin-sharp
