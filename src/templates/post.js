@@ -1,6 +1,6 @@
 /**
  *
- * Individual blog post template
+ * Individual blog post template from MDX
  *
  */
 
@@ -31,7 +31,7 @@ const PostTemplate = ({ data: { mdx: post } }) => (
         font-size: 0.75rem;
       `}
     >
-      Posted by Aaron on {post.frontmatter.date}
+      By Aaron posted on {post.frontmatter.date}
     </p>
     <MDXRenderer>{post.body}</MDXRenderer>
     <ReadLink to="/posts">&larr; back to all posts</ReadLink>

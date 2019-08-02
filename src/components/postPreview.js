@@ -9,6 +9,7 @@ import { css } from "@emotion/core"
 import ReadLink from "./readLink"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
+import { previewImage as DefaultImg } from "./defaultImage"
 
 const PostPreview = ({ post }) => (
   <article
@@ -30,15 +31,20 @@ const PostPreview = ({ post }) => (
         width: 100px;
       `}
     >
-      <Image
-        fluid={post.image.sharp.fluid}
-        css={css`
-          * {
-            margin-top: 0;
-          }
-        `}
-        alt={post.alt}
-      />
+      {// serve default image if no image declared in post frontmatter
+      !post.image ? (
+        <DefaultImg />
+      ) : (
+        <Image
+          fluid={post.image.sharp.fluid}
+          css={css`
+            * {
+              margin-top: 0;
+            }
+          `}
+          alt={post.alt}
+        />
+      )}
     </Link>
     <div>
       <h3>
