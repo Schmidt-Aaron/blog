@@ -38,11 +38,10 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, {data.site.siteMetadata.author}. Built
-          with lots of ☕ and a little ❤️
-          {` `}
+          © {new Date().getFullYear()}, {data.site.siteMetadata.author}. Made
+          with ❤️ and lots of ☕{` `}
           <p>
-            Made with <a href="https://www.gatsbyjs.org">Gatsby</a> and hosted
+            Built using <a href="https://www.gatsbyjs.org">Gatsby</a> and hosted
             on Netlify
           </p>
         </footer>
