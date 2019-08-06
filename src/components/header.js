@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { css } from "@emotion/core"
-import Logo from "../images/Logov1_animated.svg"
+import Logo from "../images/Logov3_animated.svg"
 
 const Header = ({ siteTitle }) => (
   <header
