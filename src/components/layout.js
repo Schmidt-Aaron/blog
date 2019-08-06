@@ -26,27 +26,42 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div
+      css={css`
+        min-height: 100vh;
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-rows: auto 1fr auto;
+      `}
+    >
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
+      <main
         css={css`
           margin: 0 auto;
+          width: 100%;
           max-width: 960px;
           padding: 0px 1.0875rem 1.45rem;
           padding-top: 0;
         `}
       >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, {data.site.siteMetadata.author}. Made
-          with ❤️ and lots of ☕{` `}
-          <p>
-            Built using <a href="https://www.gatsbyjs.org">Gatsby</a> and hosted
-            on Netlify
-          </p>
-        </footer>
-      </div>
-    </>
+        {children}
+      </main>
+      <footer
+        css={css`
+          margin: 0 auto;
+          max-width: 960px;
+          align-self: bottom;
+          text-align: center;
+        `}
+      >
+        © {new Date().getFullYear()}, {data.site.siteMetadata.author}. Made with
+        ❤️ and lots of ☕{` `}
+        <p>
+          Built using <a href="https://www.gatsbyjs.org">Gatsby</a> and hosted
+          on Netlify
+        </p>
+      </footer>
+    </div>
   )
 }
 
