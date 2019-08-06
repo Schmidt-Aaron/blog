@@ -15,6 +15,8 @@ module.exports = {
     `gatsby-plugin-emotion`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    // https://www.gatsbyjs.org/packages/gatsby-plugin-advanced-sitemap/?=sitemap
+    `gatsby-plugin-advanced-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
