@@ -2,7 +2,20 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import { css } from "@emotion/core"
+import styled from "@emotion/styled"
 import Logo from "../images/Logov3_animated.svg"
+import NavMenu from "./NavMenu"
+
+const MenuLink = styled(Link)`
+  margin-right: 1rem;
+  justify-self: flex-end;
+  color: #eee;
+  text-decoration: none;
+
+  &:hover {
+    color: white;
+  }
+`
 
 const Header = ({ siteTitle }) => (
   <header
@@ -27,6 +40,9 @@ const Header = ({ siteTitle }) => (
         margin: 0 auto;
         max-width: 960;
         padding: 1.45rem 1.0875rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       `}
     >
       <h1
@@ -38,7 +54,7 @@ const Header = ({ siteTitle }) => (
         <Link
           to="/"
           css={css`
-            color: white;
+            color: #eee;
             text-decoration: none;
           `}
         >
@@ -52,10 +68,7 @@ const Header = ({ siteTitle }) => (
           />
         </Link>
       </h1>
-      <Link to="/about">About</Link>
-      <Link to="/pojects">Projects</Link>
-      <Link to="/posts">Blog</Link>
-      <Link to="/contact">Contact</Link>
+      <NavMenu />
     </div>
   </header>
 )

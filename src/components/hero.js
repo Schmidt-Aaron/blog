@@ -2,10 +2,9 @@ import React from "react"
 import styled from "@emotion/styled"
 import BackgroundImage from "gatsby-background-image"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import Greetings from "../images/intro"
 
 const ImageBackground = styled(BackgroundImage)`
-  background-image: url("../images/jellyfish.jpg");
+  /* background-image: url("../images/jellyfish.jpg"); */
   background-position: top 20% center;
   background-size: cover;
   height: 100vh;
@@ -59,7 +58,7 @@ const Hero = () => {
         <h1>Hello.</h1>
         <h2>I'm Aaron, a full stack developer living in beautiful Seattle.</h2>
         <p>
-          Need a developer? <Link to={"/about"}>Learn about me &rarr;</Link>
+          <Link to={"/about"}>Learn about me &rarr;</Link>
         </p>
       </TextBox>
     </ImageBackground>
