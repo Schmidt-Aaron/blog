@@ -38,6 +38,7 @@ const PostPreview = ({ post }) => (
         <Image
           fluid={post.image.sharp.fluid}
           css={css`
+            width: 100px;
             * {
               margin-top: 0;
             }

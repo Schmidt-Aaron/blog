@@ -9,8 +9,8 @@ export const previewImage = () => {
     query {
       placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
         childImageSharp {
-          fluid(maxWidth: 100) {
-            ...GatsbyImageSharpFluid
+          fixed(width: 100) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -19,7 +19,7 @@ export const previewImage = () => {
 
   return (
     <Image
-      fluid={data.placeholderImage.childImageSharp.fluid}
+      fixed={data.placeholderImage.childImageSharp.fixed}
       css={css`
         * {
           margin-top: 0;
