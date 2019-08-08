@@ -34,7 +34,7 @@ const NavMenu = () => {
       `}
     >
       <MenuLink to="/about">About</MenuLink>
-      <MenuLink to="/pojects">Projects</MenuLink>
+      <MenuLink to="/projects">Projects</MenuLink>
       <MenuLink to="/posts">Blog</MenuLink>
       <MenuLink to="/contact">Contact</MenuLink>
     </nav>

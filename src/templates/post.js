@@ -32,7 +32,7 @@ const PostTemplate = ({ data: { mdx: post } }) => (
           font-size: 0.75rem;
         `}
       >
-        By Aaron posted on {post.frontmatter.date}
+        By Aaron posted on <time>{post.frontmatter.date}</time>
       </p>
       <MDXRenderer>{post.body}</MDXRenderer>
       <ReadLink to="/posts">&larr; back to all posts</ReadLink>
