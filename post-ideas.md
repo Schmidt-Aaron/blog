@@ -28,3 +28,4 @@
 - sodaStream with big tank
 - integrating other data sources into gatsby?
 - hold your breath training?
+- get firacode font for free and how to install into VS code

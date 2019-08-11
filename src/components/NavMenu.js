@@ -1,31 +1,59 @@
+/** @jsx jsx */
 import React from "react"
 import { Link } from "gatsby"
-import { css } from "@emotion/core"
+import { css, jsx } from "@emotion/core"
 import styled from "@emotion/styled"
 
-const MenuLink = styled(Link)`
-  margin-right: 1rem;
-  justify-self: flex-end;
-  color: #f8f8f8;
-  text-decoration: none;
+const MenuLink = props => {
+  // docs: https://reach.tech/router/api/Link
 
-  &:hover {
-    color: white;
+  const linkStyle = css`
+    margin-right: 1rem;
+    justify-self: flex-end;
+    color: #f8f8f8;
+    text-decoration: none;
+
+    &:hover {
+      color: white;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      width: 0%;
+      padding-top: 0px;
+      border-bottom: 1px solid #f8f8f8;
+      transition: all 0.3s ease-in;
+    }
+
+    &:hover:after {
+      width: 100%;
+    }
+  `
+
+  const activeLinkStyle = {
+    marginRight: `1rem`,
+    justifySelf: `flex-end`,
+    color: `#38ef7d`,
+    textDecoration: `none`,
+
+    "& :after": {
+      content: `""`,
+      display: `block`,
+      width: `100%`,
+      paddingTop: 0,
+      borderBottom: `1px solid #FFF`,
+    },
   }
 
-  &:after {
-    content: "";
-    display: block;
-    width: 0%;
-    padding-top: 0px;
-    border-bottom: 1px solid #f8f8f8;
-    transition: all 0.3s ease-in;
+  const isActive = ({ isCurrent }) => {
+    // toggle for active link
+    return isCurrent ? { style: { activeLinkStyle } } : { style: { linkStyle } }
   }
 
-  &:hover:after {
-    width: 100%;
-  }
-`
+  return <Link css={linkStyle} activeStyle={activeLinkStyle} {...props} />
+}
+
 const NavMenu = () => {
   return (
     <nav

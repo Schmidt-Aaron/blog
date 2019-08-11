@@ -3,11 +3,12 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import TitleWithGradient from "../components/TitleWithGradient"
 
 const Contact = () => (
   <Layout>
     <SEO title="Contact Aaron" />
-    <h1>Contact Me</h1>
+    <TitleWithGradient>Say Hello</TitleWithGradient>
     <p>Welcome to your new Gatsby site.</p>
     <Link to="/">Back to home</Link>
   </Layout>

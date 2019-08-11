@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
-import Logo from "../images/Logov3_animated.svg"
+import Logo from "../images/A_logo.svg"
 import NavMenu from "./NavMenu"
 
 const MenuLink = styled(Link)`
