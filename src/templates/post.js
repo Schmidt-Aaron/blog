@@ -25,7 +25,12 @@ export const query = graphql`
 
 const PostTemplate = ({ data: { mdx: post } }) => (
   <Layout>
-    <article>
+    <article
+      css={css`
+        max-width: 600px;
+        margin: auto;
+      `}
+    >
       <h1>{post.frontmatter.title}</h1>
       <p
         css={css`
