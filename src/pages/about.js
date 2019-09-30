@@ -8,7 +8,7 @@ const About = () => (
   <Layout>
     <SEO title="About Aaron" />
     <h1>About Me</h1>
-    <p>Welcome to your new Gatsby site.</p>
+    <p>Hi. My name is Aaron Schmidt. I am a </p>
     <Link to="/">Back to home</Link>
   </Layout>
 )

@@ -1,0 +1,154 @@
+---
+title: "A Comprehensive Guide to Centering with CSS"
+date: "9-27-2019"
+slug: CSS-centering-guide
+---
+
+Having to center something using CSS is a very common problem. One that, I will readily admit to having to Google from time to time ( I always get justify-content and align-items confused). The good news is that centering has gotten much much easier with the wide-adoption of Flexbox and CSS Grid. This guide will go through all the common ways to center elements both horizontally and vertically.
+
+## Horizontal Centering
+
+### Inline Elements (text, links, ...etc)
+
+You can center inline elements using the `text-align: center` property. Note that the parent must be a block-level element
+
+### Block Elements
+
+There are several ways to center block-level elements
+
+1. Margin-auto
+   This method uses `margin: 0 auto;` which is shorthand for `margin-left: auto, margin-right: auto;`
+2. Flexbox
+   Enter our first modern CSS property. Flexbox makes centering an element easy.
+
+```
+.parent {
+  display: flex;
+  justify-content: center;
+}
+```
+
+3. grid
+   CSS grid shares many of the same positioning properties as Flexbox. In this case the code required to horizontally center a block-level child is practically the same.
+
+```
+.parent {
+  display: grid;
+  justify-content: center;
+}
+```
+
+4. Using CSS Position property (oldie)
+   This is an older technique that relies on a combination of the position and transform/translate properties to center elements. If the width is known you can also set the transform property to a set amount of pixels. However, this is less robust and will break if the width of the element changes.
+
+```
+.parent {
+  position: relative; // needed to contain the absolute positioning of the child element to the parent.
+}
+.child {
+  position: absolute;
+  left: 50%; // moves the leftmost edge of the element 50% from the left side of the parent.
+  transform: translateX(-50%) // moves the element left 50% of its total width to center it
+  // alternate method: transform: translateX(150px) // the amount translated should equal 50% of the total width of the element.
+}
+```
+
+## Vertical Centering
+
+Historically, vertical centering an element was the 'difficult' thing to do. Again, this is now easy with Flexbox or CSS Grid.
+
+### Block Elements
+
+There are several ways to center block-level elements
+
+1. Flexbox
+   Flexbox makes vertically centering an element easy.
+
+```
+.parent {
+  display: flex;
+  align-items: center;
+}
+```
+
+2. grid
+   As seen above, CSS grid shares the basic approach as Flexbox.
+
+```
+.parent {
+  display: grid;
+  align-items: center;
+}
+```
+
+3. Using CSS Position property
+   The same approach can also be used to center an element vertically with a couple alterations.
+
+```
+.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+```
+
+## Both Horizontal and Vertical Centering
+
+1. Flexbox
+   Flexbox makes vertically centering an element easy.
+
+```
+.parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+2. grid
+   As seen above, CSS grid shares the basic approach as Flexbox.
+
+```
+.parent {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+3. Using CSS Position property
+   To center in both axises we need to combine the transform. This technique can also be used with negative margins instead of the transform. Using negative margins requires you to know the exact dimensions of the element as you will need to set the margins to exactly 50% of the height and width, respectively.
+
+```
+.parent {
+  position: relative;
+}
+.child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+```
+
+Using negative margins:
+
+```
+.parent {
+  position:relative;
+}
+
+.child {
+  height: 100px;
+  width: 300px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -70px;
+  margin-left: -160px;
+}
+```

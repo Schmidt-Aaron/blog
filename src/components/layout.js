@@ -49,6 +49,7 @@ const Layout = ({ children }) => {
       <footer
         css={css`
           margin: 0 auto;
+          width: 100%;
           max-width: 960px;
           align-self: bottom;
           text-align: center;
