@@ -1,0 +1,125 @@
+---
+title: How to Remove Duplicates from an Array
+date: "10-19-2019"
+slug: how-to-remove-duplicates-from-an-array
+---
+
+Arrays are one of the most widely used data structures. The problem of having to remove duplicate entries from an array is a fairly run-of-the-mill task that someone might be tasked with, or something that could even come up as an interview question. Like most things in programing, there are multiple ways to go about solving the problem and this article will demonstrate several different approaches to solving the problem using Javascript.
+
+## 1. Brute Force
+
+```Javascript
+const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
+
+// basic for loop
+let finalArray = [];
+for (let i = 0; i<startingArray.length; i++) {
+  if(finalArray.indexOf(startingArray[i]) === -1) {
+    finalArray.push(startingArray[i])
+  }
+}
+
+console.log(finalArray) // [2, 3, 4, 5, 6, 34]
+
+// replace for loop with Array.map
+let finalArray2 = [];
+startingArray.map(item => {
+  if( finalArray2.indexOf(item) === -1 ) {
+    finalArray2.push(item)
+  }
+}
+
+console.log(finalArray2) // [2, 3, 4, 5, 6, 34]
+
+// using map with .includes and a ternary operator
+const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
+let finalArray3 = [];
+startingArray.map(item => {
+  finalArray3.includes(item) ? null : finalArray3.push(item);
+})
+
+console.log(finalArray3) // [2, 3, 4, 5, 6, 34]
+```
+
+## 2. Sort to Remove
+
+```Javascript
+
+const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
+const finalArray = [];
+let temp;
+
+startingArray.sort() // [2, 3, 3, 34, 4, 4, 5, 5, 6]
+
+for (let i = 0; i<startingArray.length; i++) {
+  if(startingArray[i] !== temp) {
+    finalArray.push(startingArray[i]);
+    temp = startingArray[i];
+  }
+}
+
+console.log(finalArray) // [2, 3, 34, 4, 5, 6]
+```
+
+## 3. Using .filter()
+
+```Javascript
+const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
+
+const finalArray = startingArray.filter((item, index) => {
+  return startingArray.indexOf(item) === index;
+})
+console.log(finalArray) // [2, 3, 4, 5, 6, 34]
+
+```
+
+## 4. Using .reduce()
+
+```Javascript
+const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
+
+
+
+```
+
+## 5. Using a Hash Table / Dictionary
+
+```Javascript
+const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
+let obj = {};
+
+for( let i of startingArray) {
+  obj[i] = true
+}
+
+// console.log(obj) // {2: true, 3: true, 4: true, 5: true, 6: true, 34: true}
+
+let finalArray = Object.keys(obj)
+
+console.log(finalArray) // ["2", "3", "4", "5", "6", "34"]
+// *Note the type conversion!!
+```
+
+## 6. Using the Set Data Structure (ES6)
+
+I saved my favorite approach for last.
+
+```Javascript
+const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
+
+const uniques = new Set(startingArray);
+
+const uniqueArray = [...uniques]
+
+console.log(uniqueArray) // [2, 3, 4, 5, 6, 34]
+```
+
+You can also do this in one line of code using the spread operator, but I find the more verbose method above easier to read.
+
+```Javascript
+const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
+
+const uniqueArray = [... new Set(startingArray)]
+
+console.log(uniqueArray)
+```

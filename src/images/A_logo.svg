@@ -52,7 +52,7 @@ path {
   100%{
     opacity:1;
     stroke-dashoffset: 0;
-    fill:#ddd;
+    fill:#000;
   }
 }
 </style>
