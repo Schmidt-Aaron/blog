@@ -4,9 +4,13 @@ date: "10-19-2019"
 slug: how-to-remove-duplicates-from-an-array
 ---
 
-Arrays are one of the most widely used data structures. The problem of having to remove duplicate entries from an array is a fairly run-of-the-mill task that someone might be tasked with, or something that could even come up as an interview question. Like most things in programing, there are multiple ways to go about solving the problem and this article will demonstrate several different approaches to solving the problem using Javascript.
+Arrays are one of the most widely used data structures. This article will go over several ways to remove duplicate entries from an array using JavaScript. This is a fairly run-of-the-mill task that someone might have to do, or something that could come up as an interview question.
+
+Like most things in programing, there are multiple ways to go about solving the problem.
 
 ## 1. Brute Force
+
+These approaches loop through the input array and use some sort of logic to determine
 
 ```Javascript
 const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
@@ -75,40 +79,52 @@ console.log(finalArray) // [2, 3, 4, 5, 6, 34]
 
 ## 4. Using .reduce()
 
+This method
+
 ```Javascript
 const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
-
+const final = startingArray.reduce((acculator, currentValue) => {
+  return acculator.includes(currentValue)
+  ? acculator
+  : [...acculator, currentValue]
+}, [])
 
 
 ```
 
 ## 5. Using a Hash Table / Dictionary
 
+This method uses a dictionary to store the values. Objects cannot have duplicate keys so each value can only be stored once. After the values are stored they are then assigned to a new array by using a for...of loop. One possible issue of this approach is that there could be a type conversion in the resultant values.
+
 ```Javascript
 const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
 let obj = {};
 
+// loops through the array and stores each value as a separate key in the obj
 for( let i of startingArray) {
-  obj[i] = true
+  obj[i] = true;
 }
-
 // console.log(obj) // {2: true, 3: true, 4: true, 5: true, 6: true, 34: true}
 
+
+// converts the unique object keys into a new array
 let finalArray = Object.keys(obj)
 
-console.log(finalArray) // ["2", "3", "4", "5", "6", "34"]
 // *Note the type conversion!!
+console.log(finalArray) // ["2", "3", "4", "5", "6", "34"]
 ```
 
 ## 6. Using the Set Data Structure (ES6)
 
-I saved my favorite approach for last.
+I saved my favorite approach for last. This way utilizes the Set data structure. Sets are a new addition that was introduced to JavaScript in ES6. They are perfect for this problem because they cannot have duplicate values by default. When you convert an array to a set any duplicate values are stripped away.
 
 ```Javascript
 const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
 
+// convert the Array into a Set via the constructor method
 const uniques = new Set(startingArray);
 
+// convert the set back into an Array
 const uniqueArray = [...uniques]
 
 console.log(uniqueArray) // [2, 3, 4, 5, 6, 34]
@@ -119,7 +135,10 @@ You can also do this in one line of code using the spread operator, but I find t
 ```Javascript
 const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
 
+// array --> set --> array
 const uniqueArray = [... new Set(startingArray)]
 
-console.log(uniqueArray)
+console.log(uniqueArray) // [2, 3, 4, 5, 6, 34]
 ```
+
+I had fun going through some of the many different methods of solving the problem of removing duplication from an array.

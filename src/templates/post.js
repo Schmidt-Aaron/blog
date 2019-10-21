@@ -10,6 +10,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { css } from "@emotion/core"
 import Layout from "../components/layout"
 import ReadLink from "../components/readLink"
+import "./post.css"
 
 export const query = graphql`
   query($slug: String!) {
@@ -37,7 +38,7 @@ const PostTemplate = ({ data: { mdx: post } }) => (
           font-size: 0.75rem;
         `}
       >
-        By Aaron posted on <time>{post.frontmatter.date}</time>
+        Posted on <time>{post.frontmatter.date}</time>
       </p>
       <MDXRenderer>{post.body}</MDXRenderer>
       <ReadLink to="/posts">&larr; back to all posts</ReadLink>

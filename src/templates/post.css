@@ -1,0 +1,13 @@
+/* 
+
+CSS for posts; 
+
+*/
+
+.gatsby-highlight {
+  margin: 2rem -1rem 3rem;
+}
+
+.gatsby-highlight > pre {
+  border-radius: 15px;
+}
