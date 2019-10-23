@@ -11,6 +11,7 @@ import { css } from "@emotion/core"
 import Layout from "../components/layout"
 import ReadLink from "../components/readLink"
 import "./post.css"
+import moment from "moment"
 
 export const query = graphql`
   query($slug: String!) {
@@ -38,7 +39,10 @@ const PostTemplate = ({ data: { mdx: post } }) => (
           font-size: 0.75rem;
         `}
       >
-        Posted on <time>{post.frontmatter.date}</time>
+        Posted on{" "}
+        <time dateTime={post.frontmatter.date}>
+          {moment(post.frontmatter.date).format("LL")}
+        </time>
       </p>
       <MDXRenderer>{post.body}</MDXRenderer>
       <ReadLink to="/posts">&larr; back to all posts</ReadLink>
