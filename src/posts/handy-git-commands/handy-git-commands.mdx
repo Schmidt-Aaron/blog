@@ -47,3 +47,21 @@ You can quickly open a browser page the the docs page for any individual git com
 ```Shell
 git branch --help
 ```
+
+## Cleanup untracked files
+
+There are two methods to accomplish this. One considerably safer than the other.
+
+The safe method is to run the `git trash` command. This command moves any untracked files to the .trash directory for review.
+
+Before you use this command make sure you add the .trash directory to your .gitignore file or this command will remove the .trash folder as well.
+
+```Shell
+git trash
+```
+
+The more dangerous method is to use the `git clean` command. This will delete any untracked files in your repo. This command deletes permanently so use with caution!! Always use the `-n` or `--dry-run` flags if you are going to run this command to preview what will be deleted.
+
+```Shell
+git clean -n
+```
