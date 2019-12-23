@@ -1,0 +1,35 @@
+---
+title: How to Downgrade Your Node.js Version
+date: 2019-12-23
+slug: downgrade-nodejs-version
+tags: ["nodejs", "JS"]
+---
+
+Every once in a while you may come across version conflicts with your tech stack. I recently opened a React Native + Expo project that I haven't touched in a few months, and, big surprise, received a bunch of run time errors when I tried to start up the project. Now this seems to happen with frustrating regularity whenever I work with Expo, but that is another story.
+
+First, I tried to update my out of date dependencies. Something that has resolved similar runtime errors with expo before. No dice.
+
+Next I consulting with Stack Overflow and my good pal Google and found out that the issue was with Node version 12.10 and above. The recommended solution was to downgrade Node to v12.09. Here is the [github issue](https://github.com/expo/expo-cli/issues/1074) for those who are curious.
+
+## Downgrade Node.js using Windows
+
+On a windows 10 machine (what I am running). The process is simple, albeit not very elegant.
+
+1. Uninstall Node. To uninstall something from Win10 you need to navigate to Settings>Apps and Features. From there you can sort for 'node' and hit 'uninstall'.
+2. Install the [desired version of Node](https://nodejs.org/en/download/releases/) from the official website. I went with version 12.9.1. On the downloads page I selected the 64-bit windows installer `node-v12.9.1-x64.msi`.
+3. check your new version of Node by typing 'node -v' on your command line.
+
+## Downgrade Node.js using MacOS
+
+MacOS users get a helpful [package](https://www.npmjs.com/package/n) to manage their Node versioning. All you need to do is install the proper package and then specify the version you want on the command line.
+
+```bash
+npm install -g n
+n 12.9.1
+```
+
+Easy!
+
+## Problem Solved!
+
+I downgraded Node and now Expo is working again! Hopefully, you won't into any Node version issues, but if you do I hope the instruction above will help you resolve them.

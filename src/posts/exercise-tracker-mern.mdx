@@ -1,0 +1,364 @@
+---
+title: creating an exercise tracker with the MERN stack
+date: 2019-11-13
+slug: Creating an Exercise Tracker using the MERN stack
+---
+
+Today we will be creating an exercise tracker using the MERN stack. This application will allow users to input and track their exercises.
+
+## What is the MERN stack?
+
+MongoDB, Expressjs, React, and Node.
+
+### MongoDB
+
+... a little about it
+
+### Express
+
+... a little about it
+
+### React
+
+... a little about it
+
+### Node
+
+... a little about it
+
+## Backend
+
+Install Node / create react app
+
+`npm install node`
+
+Install [nodemon](https://www.npmjs.com/package/nodemon) which will watch our backend files and restart our node server every time it detects a change. Without it we would need to shut down and restart our server every time we made a change to our server files. It's a huge quality of life boost so let's install it globally.
+
+`npm install nodemon -g`
+
+create a project folder and navigate to it. I went with 'exercise-tracker-mern', but you can call it whatever you want. Here we want to initialize our project with the default npm configuration using `npm init -y`.
+
+## Project basics
+
+### Git / version control
+
+We also want to initialize git with `git init` to enable git-based version control for our project. This will help us track the changes as we build our project.
+
+If you don't already have git installed globally on your machine you can find instructions on the [official site](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+Since we are using git we will also need to create a `.gitignore` file in your project root. This file tells git which files to ignore. This is important to set up now because it is much easier to be proactive and prevent issues then to fix them afterwards. It also allows us to keep any secrets safe by ignoring any files that contain sensitive information. Below is the sample .gitignore file that will work fine for our purposes.
+
+```bash
+/node_modules
+backend/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env*
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+```
+
+## new heading here
+
+in your project root create a folder for the backend. I went with 'backend'.  
+`mkdir backend`
+
+Let's initialize a new project here and use the default configuration with the -y flag.
+`npm init -y`
+
+Now we need to install some dependencies.
+
+`npm install express cors mongoose dotenv```
+
+Let's breakdown why we need each of these packages.
+
+I already went over what Express was above so thats done.
+
+[Cors](https://www.npmjs.com/package/cors) is a middleware package for express that allows us to enable Cross-origin resource sharing or [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing) for short. Without it we wouldn't be able to access our backend from our front-end.
+
+[Mongoose](https://mongoosejs.com/docs/) is used for creating our database models. Basically, it makes interacting with our database easier.
+
+[Dotenv](https://www.npmjs.com/package/dotenv) is a package that helps load environment variables from a .env file. This is vital as we will be using sensitive data to interact with our mongoDB instance and we really don't want to share our secrets.
+
+Ok, lets start working on our server. In the root of your backend folder create a new file called 'server.js' and add the following code.
+
+```js
+// .../backend/server.js
+const express = require("express")
+const cors = require("cors")
+
+require("dotenv").config()
+
+// initialize express
+const app = express()
+const port = process.env.PORT || 7777
+
+// middleware
+app.use(cors())
+app.use(express.json())
+
+// starts the server
+app.listen(port, () => {
+  console.log(`The server is listening on port: ${port}`)
+})
+```
+
+This code is the foundation of our server. We bring in our first dependencies, initialize express, add our first [middleware](https://expressjs.com/en/guide/using-middleware.html), and finally tell the express server to start on port 7777. This is a very common pattern and it's varients are the basis of most express servers.
+
+One thing of note is that express has brought the [body-parser](https://expressjs.com/en/resources/middleware/body-parser.html) middleware package back into express in version 4.16.0. It was previously removed in version 4.0. We initialize it above via the `app.use(express.json())` line.
+
+Previously, you would import it with:
+
+```js
+const bodyParser = require("body-parser")
+app.use(bodyParser.json())
+```
+
+### Starting the server
+
+OK, so we now have a bare-bones express server. Let's start it up and see if it works!
+
+```bash
+# ../backend
+nodemon server
+```
+
+If everything is set up correctly we should see some variation of the following output:
+
+```bash
+[nodemon] 1.19.4
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching dir(s): *.*
+[nodemon] watching extensions: js,mjs,json
+[nodemon] starting `node server.js`
+The server is listening on port: 7777
+```
+
+## Setting up a MongoDB instance
+
+You can host your [DB locally](add link) or you can use the free tier of [MongoDB's Atlas](https://docs.atlas.mongodb.com/getting-started/) service.
+
+### Hooking up the DB
+
+Now that we have a working express server let's move on to hooking up our datastore, in this case, a mongoDB database.
+
+First, we need to generate the mongoDB connection details. The [official docs](https://docs.atlas.mongodb.com/connect-to-cluster/) have a great walk through if you need help generating the required connection info.
+
+We are electing to use the 'connection string' method. Mongo Atlas will provide you with a URI string that will look something like this:
+
+```
+mongodb+srv://<user>:<password>@cluster0-7vy31.azure.mongodb.net/test?retryWrites=true&w=majority
+```
+
+The <user> and <password> refer to the Atlas user that you created. This login information is important and should be kept a secret. In order to accomplish this we will be using [environmental variables](https://en.wikipedia.org/wiki/Environment_variable). Luckily, we already installed the 'dotenv' package for this very reason.
+
+Next, we need to create a new file in our backend root called '.env' to store our connection details. If you created the .gitignore file earlier then this file shouldn't be tracked by git. This enables us to store sensitive information here without the worry of it being visible to others. Make sure to replace the <user> and <password> bits with your own user details. Your .env file should look something like this:
+
+```bash
+# ../backend/.env
+
+MONGO_URI=mongodb+srv://<user>:<password>@cluster0-7vy31.azure.mongodb.net/test?retryWrites=true&w=majority
+```
+
+Now that we have our database connection details locked away in our .env file we need to require our mongoose package that we installed earlier.
+
+```js
+// ../backend/server.js
+
+// set up mongoDB connection
+const uri = process.env.MONGO_URI
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useUnifiedTopology: true,
+})
+
+const db = mongoose.connection
+db.on("error", console.error.bind(console, "connection error:"))
+db.once("open", () => {
+  console.log("MongoDB connection established")
+})
+```
+
+Note that we are calling our connection details through the `process.env.MONGO_URI` string instead of declaring them inside the file. Always keep your secrets safe! The three flags passed in the mongoose.connect method are to work around several [deprecations](https://mongoosejs.com/docs/deprecations.html) in the mongoDB driver.
+
+Let's test our database connection! If you are still running your nodemon process then you should see the following. If, not restart your server with the `nodemon server` command.
+
+```bash
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+The server is listening on port: 7777
+MongoDB connection established
+```
+
+### Creating our database models
+
+A database model is a logical description of the structure of a database. It will contain information used to determine what data is stored and how that data is stored.
+
+Now that we are connected to our database our next step is to create and define our database schemas with the help of [mongoose](https://mongoosejs.com/docs/guide.html). These schemas are used as a configuration object for the models. Each schema will contain a number of properties that can be further defined through the use of [schemaTypes](https://mongoosejs.com/docs/schematypes.html).
+
+To start, we will need to define two schemas. One for our users, and one for the exercises. As the application becomes more complex we will revisit these models to add more schemaTypes and further define the ones we have.
+
+First, we need a place to store our models. Let's create a new directory inside our backend root called `models`. Inside this folder we will be creating two new files, one for each schema that we will need. We will be using the naming convention of capitalizing each model name.
+
+Our exercise model will start with four properties that we will type and make required using schemaTypes.
+
+1. A username field so we can link the exercises to a specific user.
+2. Description of the exercise
+3. the duration of the exercise
+4. the date the exercise took place
+
+```js
+// ../backend/models/Exercise.js
+const mongoose = require("mongoose")
+
+// create the schema
+const Schema = mongoose.Schema
+
+// describe the schema
+const exerciseSchema = new Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    duration: {
+      type: Number,
+      required: true,
+    },
+    date: {
+      type: Date,
+      required: true,
+    },
+  },
+  {
+    timestamps: true, // keep track of the created at, and modified at dates
+  }
+)
+
+// create the model from the schema
+const Exercise = mongoose.model("Exercise", exerciseSchema)
+
+// export it!
+module.exports = Exercise
+```
+
+Our user model will start with one property, username. We will apply a number of schemaTypes to further define and validate the username value.
+
+```js
+// ../backend/models/User.js
+const mongoose = require("mongoose")
+
+// create the schema
+const Schema = mongoose.Schema
+
+// describe the schema
+const userSchema = new Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+      lowercase: true, // calls .toLowerCase() on the value
+      minLength: 3, // the values length is at least this value
+      unique: true, // each entry has to be unique
+      trim: true, // calls .trim() on the value
+    },
+  },
+  {
+    timestamps: true,
+  }
+)
+
+// create the model from the schema
+const User = mongoose.model("User", userSchema)
+
+// export it!
+module.exports = User
+```
+
+Still with me? Great! The next step will be working on the the routing for the application.
+
+## Server Routing & API Endpoints
+
+Routing is an important part of any application. A route typically has three parts: a HTTP verb (GET, PUT, ...etc), a URL path, and a function that controls the behavior at that specific URL/HTTP request. There are several ways to set routes in Express, but in this guide we will be using the express.Router middleware. This has the advantage of letting us group 'like' routes into a single route prefix.
+
+Let's set up two routes. One to handle all exercise related endpoints, and one for our user endpoints. To keep our code organized we need to create a new folder called 'routes'. Inside that folder we will be creating two new files.
+
+User router:
+
+```js
+// backend/routes/user.js
+const router = require("express").Router()
+
+router.get("/", (req, res) => {
+  res.send("The users route is working")
+})
+
+module.exports = router
+```
+
+Exercise router:
+
+```js
+// backend/routes/exercise.js
+const router = require("express").Router()
+
+router.get("/", (req, res) => {
+  res.send("The exercise route is working")
+})
+
+module.exports = router
+```
+
+Right now each route only returns a string value. This will help us test our routes once we tell our express server to use them. To do that we will need to add a few lines of code to our server.js file. We will import our bare-bones routes, and then tell the app when to use each one.
+
+```js
+// .../backend/server.js
+
+//...
+
+// routing
+const exerciseRouter = require("./routes/exercises")
+const userRouter = require("./routes/users")
+
+app.use("/exercises", exerciseRouter)
+app.use("/users", userRouter)
+
+// starts the server
+app.listen(port, () => {
+  console.log(`The server is listening on port: ${port}`)
+})
+```
+
+Now, when we navigate to 'localhost:7777/exercises' or to 'localhost:7777/users' the app will use the route files to determine what it should do. In our case, we should get a string back telling us that the routes are working. Let's test this now.
+
+Start, or verify that nodemon has restarted the server, and then navigate to 'localhost:7777/users'. If everything is hooked up correctly, we should see a white screen with the following text, "The users route is working". Do the same thing for the exercises route to make sure that route is hooked up as well.
+
+### Adding more functionality to our routes
+
+We have our two routes set up, but they don't really do anything yet. Let's change that. First we will update our user route to actually do something.
+
+### Set Up Server Routing
+
+## Front-end
+
+And what about the routing for our application's root ('/')? Shouldn't we have something for that
+
+install react for the frontend portion of the application. In this case we are using the
+`npx create-react-app client`
