@@ -1,0 +1,90 @@
+---
+title: What is Bubble Sort and How to Implement it in JavaScript
+date: 2020-01-09
+slug: bubble-sort
+tags: ["CS", "JS"]
+status: draft
+---
+
+Bubble sort is a sorting algorithm that works by comparing adjacent elements and swapping them if they are in the wrong order. Due to it's simplicity, it is often used to demonstrate the concept of a sorting algorithm. However, it has little use outside of the conceptual because of it's terrible performance. It has a worst case complexity of O(n^2) and a best case complexity of O(n) if the input is already sorted.
+
+## Step-by-Step Example
+
+Here is a visual breakdown of a bubble sort from the lowest number to the greatest number using the array '3, 9, 5, 1, 2'. Elements in bold are being compared.
+
+### First Pass
+
+(**3** **9** 5 1 2) => (**3** **9** 5 1 2), No change as the two elements are already in the correct order.
+(3 **9** **5** 1 2) => (3 **5** **9** 1 2), swap because 9 > 5.
+(3 5 **9** **1** 2) => (3 5 **1** **9** 2), swap because 9 > 1.
+(3 5 1 **9** **2**) => (3 5 1 **2** **9**), swap because 9 > 2.
+
+### Second Pass
+
+(**3** **5** 1 2 9) => (**3** **5** 1 2 9)
+(3 **5** **1** 2 9) => (3 **1** **5** 2 9), swap because 5 > 1.
+(3 1 **5** **2** 9) => (3 1 **2** **5** 9), swap because 5 > 2.
+(3 1 2 **5** **9**) => (3 1 2 **5** **9**)
+
+### Third Pass
+
+(**3** **1** 2 5 9) => (**1** **3** 2 5 9), swap because 3 > 1.
+(1 **3** **2** 5 9) => (1 **2** **3** 5 9) swap because 3 > 2.
+(1 2 **3** **5** 9) => (1 2 **3** **5** 9)
+(1 2 3 **5** **9**) => (1 2 3 **5** **9**)
+
+The array is sorted by the end of the third pass, but the algorithm needs one whole pass without any swaps before it can finish.
+
+### Fourth Pass
+
+(**1** **2** 3 5 9) => (**1** **2** 3 5 9)
+(1 **2** **3** 5 9) => (1 **2** **3** 5 9)
+(1 2 **3** **5** 9) => (1 2 **3** **5** 9)
+(1 2 3 **5** **9**) => (1 2 3 **5** **9**)
+
+## Javascript Implementation
+
+Here in one way to implement a bubble sort using JavaScript.
+
+```JavaScript
+const startingArray = [3, 9, 5, 1, 2];
+
+function bubbleSort(arr) {
+  let finished = false; // exit condition
+  let tempArr = Array.from(arr); // make a copy of our starting array
+
+  while(!finished) {
+    for( let i = 0; i < tempArr.length - 1;) {
+      let first = tempArr[i];
+      let second = tempArr[i+1];
+
+      // set exit condition at start of loop
+      if(i === 0) {
+        finished = true;
+      }
+
+      // swap if first element is greater than the second element
+      if( first > second) {
+        [tempArr[i], tempArr[i+1]] = [tempArr[i+1], tempArr[i]] // swap using ES6 destructuring!
+        finished = false;
+      }
+
+
+      // repeat loop if an item was swapped
+      if(finished === false && i === tempArr.length - 2) {
+        console.log("Starting the loop again!")
+        i = 0
+      } else {
+        i++;
+      }
+    }
+  }
+  return tempArr
+}
+
+bubbleSort(startingArray) // [1, 2, 3, 5, 9]
+```
+
+Just because bubble sort doesn't have any practical applications outside of academia doesn't mean I didn't have a good time writing my own implementation. I came away from this exercise really appreciating the brevity of the built-in array method .sort().
+
+Cheers!
