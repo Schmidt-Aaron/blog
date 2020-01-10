@@ -1,0 +1,85 @@
+---
+title: What is Selection Sort and How to Implement it in JavaScript
+date: 2020-01-10
+slug: selection-sort
+tags: ["CS", "JS", "algorithms"]
+status: draft
+---
+
+Selection sort is a sorting algorithm that sorts by repeatedly finding the minimum element of the unsorted array then placing that element at the beginning. Every loop the algorithm advances the array index so the lowest element will be added next to the previous lowest element. This repeats until the entire input is sorted.
+
+Selection sort has a time complexity of O(n^2) due to the two nested loops.
+
+## Step-By-Step Example
+
+### First Pass
+
+unsorted index = 0;
+(2, 9, **1**, 4, 8) => (**1**,2, 9, 4, 8)
+1 is the lowest so it is moved to the beginning of the unsorted index.
+
+### Second Pass
+
+unsorted index = 1;
+(1, **2**, 9, 4, 8) => (1, **2**, 9, 4, 8)
+
+### Third Pass
+
+unsorted index = 2;
+(1, 2, 9, **4**, 8) => (1, 2, **4**, 9, 8)
+4 is the lowest so it is moved to the beginning of the unsorted index.
+
+### Forth Pass
+
+unsorted index = 3;
+(1, 2, 4, 9, **8**) => (1, 2, 4, **8**, 9)
+8 is the lowest so it is moved to the beginning of the unsorted index.
+
+### Fifth Pass
+
+unsorted index = 4;
+(1, 2, 4, 8, **9**) => (1, 2, 4, 8, **9**)
+
+## Implementation
+
+```JavaScript
+const startingArray = [2, 9, 1, 4, 8];
+
+function selectionSort(arr) {
+  let unsortedArr = [...arr];
+  let sortedArr = [];
+  let arrSize = unsortedArr.length;
+  let n = 0;
+
+  // loop once for every item in the starting array
+  while(n < arrSize) {
+    let minimum = unsortedArr[0];
+    let index;
+
+    // loop through unsorted array and find minimum
+    for(let i = 0; i < arrSize; i++) {
+      if(unsortedArr[i] < minimum){
+        minimum = unsortedArr[i];
+        index = i;
+      }
+    }
+
+    // push minimum value to sorted array
+    sortedArr.push(minimum);
+
+    // remove minimum value from unsorted array
+    unsortedArr.splice(index, 1)
+
+    // advance the outer counter
+    n++;
+  }
+
+  return sortedArr;
+}
+
+selectionSort(startingArray) // [1, 2, 4, 8, 9]
+```
+
+Selection sort is more efficient than bubble sort in that the number of swaps will never be more than 0(n), however it shares the same time complexity as bubble sort O(n^2) so it is too slow to use for anything practical.
+
+Cheers!
