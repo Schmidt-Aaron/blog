@@ -5,6 +5,7 @@ module.exports = {
   titleShort: `Aaron Schmidt`,
   description: `Aaron Schmidt's Personal Website`,
   url: `https://aaronms.com`,
+  siteUrl: `https://aaronms.com`,
   author: `Aaron Schmidt`,
   themeColor: `#000`,
   backgroundColor: `#fff`,
