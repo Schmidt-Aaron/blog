@@ -14,6 +14,8 @@ const usePosts = () => {
             title
             slug
             alt
+            date
+            status
             image {
               sharp: childImageSharp {
                 fluid(quality: 80, maxWidth: 100, maxHeight: 100) {
