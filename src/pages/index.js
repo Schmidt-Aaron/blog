@@ -38,7 +38,10 @@ const IndexPage = () => (
       </header>
       <div className="contact-me">
         ~{" "}
-        <a href="mailto:hello+website@aaronms.com?subject=Getting%20in%20touch">
+        <a
+          title="If your email client isn't opening then you haven't set your default client. My email is: hello@aaronms.com"
+          href="mailto:hello+website@aaronms.com?subject=Getting%20in%20touch"
+        >
           Email Me
         </a>{" "}
         &#183;{" "}
@@ -116,7 +119,10 @@ const IndexPage = () => (
           <p>Thanks for stopping by!</p>
           <div className="contact-bottom">
             ~{" "}
-            <a href="mailto:hello+website@aaronms.com?subject=Getting%20in%20touch">
+            <a
+              title="If your email client isn't opening then you haven't set your default client. My email is: hello@aaronms.com"
+              href="mailto:hello+website@aaronms.com?subject=Getting%20in%20touch"
+            >
               Email Me
             </a>{" "}
             &#183;{" "}
