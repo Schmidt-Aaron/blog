@@ -163,9 +163,9 @@ We are electing to use the 'connection string' method. Mongo Atlas will provide 
 mongodb+srv://<user>:<password>@cluster0-7vy31.azure.mongodb.net/test?retryWrites=true&w=majority
 ```
 
-The <user> and <password> refer to the Atlas user that you created. This login information is important and should be kept a secret. In order to accomplish this we will be using [environmental variables](https://en.wikipedia.org/wiki/Environment_variable). Luckily, we already installed the 'dotenv' package for this very reason.
+The `<user>` and `<password>` refer to the Atlas user that you created. This login information is important and should be kept a secret. In order to accomplish this we will be using [environmental variables](https://en.wikipedia.org/wiki/Environment_variable). Luckily, we already installed the 'dotenv' package for this very reason.
 
-Next, we need to create a new file in our backend root called '.env' to store our connection details. If you created the .gitignore file earlier then this file shouldn't be tracked by git. This enables us to store sensitive information here without the worry of it being visible to others. Make sure to replace the <user> and <password> bits with your own user details. Your .env file should look something like this:
+Next, we need to create a new file in our backend root called '.env' to store our connection details. If you created the .gitignore file earlier then this file shouldn't be tracked by git. This enables us to store sensitive information here without the worry of it being visible to others. Make sure to replace the `<user>` and `<password>` bits with your own user details. Your .env file should look something like this:
 
 ```bash
 # ../backend/.env
