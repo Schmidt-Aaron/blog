@@ -58,14 +58,14 @@ const IndexPage = () => (
           <h1>Hi, I'm Aaron!</h1>
           <h3>Web Developer | Digital Marketer | Audiobook Fanatic</h3>
           <p>
-            Welcome. This website is a work in progress and will be undergoing
-            drastic changes to the structure and content starting in February
-            2020. This is just a placeholder page until then.
+            Welcome! This website is a work in progress and as such will be
+            undergoing drastic changes to the structure and content starting in
+            February 2020. This page will serve as a placeholder until then.
           </p>
 
           <p>
             I am always on the lookout for my next project. If you have
-            something in mind please email me :)
+            something in mind please get in contact :)
           </p>
         </div>
       </section>
@@ -74,24 +74,28 @@ const IndexPage = () => (
           <h2>About Me.</h2>
 
           <p>
-            I am a web developer and digital marketer currently living in the
-            beautiful Pacific Northwest. I am a bit of an island boy at heart
-            and spent my formative years around the ocean. I grew up playing in
-            the woods and beaches of the San Juans Islands. After graduating
-            highschool I found myself studying on the sunny Hawaiian island of
-            Oahu. I have a B.S. in nutrition.
+            I am a web developer and digital marketer living in the beautiful
+            Pacific Northwest. I spent my formative years around the ocean and
+            as a result, I am a bit of an island boy at heart. I grew up playing
+            in the woods and beaches of the San Juan Islands. After graduating
+            from high school on Orcas Island I decided that it might be time for
+            a change of scenery. As a result, I found myself studying in Oahu. I
+            finished my undergrad there and earned a B.S. in nutrition.
           </p>
 
           <p>
-            I enjoy tackling hard problems. Bonus points if I get to open a
-            spreadsheet and crunch some data to figure something out. In my
-            professional career I have had the opportunity to wear many
+            I possess an analytical mentality and enjoy solving hard problems.
+            In my professional career I have had the opportunity to wear many
             different hats, from managing a medical laboratory, running my own
-            personal training studio to owning the online marketing of growing
-            fertility clinic. These roles, and more, have taught me how to
-            thrive with ambiguity.
+            personal training studio to owning the online marketing of a growing
+            fertility clinic.
           </p>
-          <p>I like to build websites using Gatsby (React), or WordPress.</p>
+          <p>
+            I like to build websites using JavaScript (React + Node + Express).
+            Gatsby is my current go-to for most projects as it is a joy to work
+            with. Sometimes I will use WordPress, but only for certain
+            use-cases.{" "}
+          </p>
 
           <p>
             My hobbies include just about anything ocean related, reading (
@@ -101,7 +105,7 @@ const IndexPage = () => (
             >
               see what I am currently reading
             </a>
-            ), cooking, and kickball.
+            ), cooking, kickball, hiking, and drinking a good IPA.
           </p>
         </div>
       </section>
@@ -109,12 +113,18 @@ const IndexPage = () => (
         <div>
           <h2>Getting in touch.</h2>
           <p className="contact-fullscreen">
-            The best ways to contact me are via email, or LinkedIn. Please use
-            the links on the left hand side of the page to reach out.
+            The best ways to contact me are via email or LinkedIn. Please use
+            the links on the left-hand side of the page to reach out. *Note that
+            the email link will not work if you do not have a default mail
+            client set up*
           </p>
           <p className="contact-mobile">
             The best ways to contact me are via email, or LinkedIn. Please use
-            the links below to reach out.
+            the links below to reach out.{" "}
+            <span className="small">
+              *Note that the email link will not work if you do not have a
+              default mail client set up*
+            </span>
           </p>
           <p>Thanks for stopping by!</p>
           <div className="contact-bottom">
