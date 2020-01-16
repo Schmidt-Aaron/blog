@@ -93,8 +93,7 @@ const IndexPage = () => (
           <p>
             I like to build websites using JavaScript (React + Node + Express).
             Gatsby is my current go-to for most projects as it is a joy to work
-            with. Sometimes I will use WordPress, but only for certain
-            use-cases.{" "}
+            with. Sometimes I use WordPress, but only for certain use-cases.{" "}
           </p>
 
           <p>
@@ -114,9 +113,11 @@ const IndexPage = () => (
           <h2>Getting in touch.</h2>
           <p className="contact-fullscreen">
             The best ways to contact me are via email or LinkedIn. Please use
-            the links on the left-hand side of the page to reach out. *Note that
-            the email link will not work if you do not have a default mail
-            client set up*
+            the links on the left-hand side of the page to reach out.{" "}
+            <span className="small">
+              *Note that the email link will not work if you do not have a
+              default mail client set up*
+            </span>
           </p>
           <p className="contact-mobile">
             The best ways to contact me are via email, or LinkedIn. Please use
