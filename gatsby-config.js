@@ -42,10 +42,10 @@ module.exports = {
         name: `Aaron Schmidt's Website`,
         short_name: `Aaron Schmidt`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#FFF`,
+        theme_color: `#3e94ec`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon/android-chrome-512x512.png`, // This path is relative to the root of the site.
       },
     },
     // generates a bundle size graph with the "analyze command"
