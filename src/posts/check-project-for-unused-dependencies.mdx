@@ -1,7 +1,7 @@
 ---
 title: How to Check Your Project for Unused Dependencies
 date: 2020-01-16
-slug: check-project-for-unused-dependencies
+slug: check-for-unused-dependencies
 tags: ["snippet", "JS", "node"]
 status: draft
 ---
@@ -17,3 +17,5 @@ npm i -g depcheck
 Run with `depcheck` inside the root directory of your project.
 
 Depcheck also takes a handful of optional arguments that can be found on the npm page linked above.
+
+Use this package with a grain of salt. It is a great way to clean up after a big refactor but it may generate some false positives for certain kinds of projects. For example, I used this on Gatsby site and the majority of the gatsby plugins were flagged as unused even though they are used at build time.
