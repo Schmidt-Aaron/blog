@@ -21,7 +21,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     // https://www.gatsbyjs.org/packages/gatsby-plugin-advanced-sitemap/?=sitemap
     `gatsby-plugin-advanced-sitemap`,
-    "gatsby-plugin-eslint",
+    `gatsby-plugin-eslint`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -70,7 +70,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
+        trackingId: "UA-149297217-1",
         // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: false,
         // Setting this parameter is optional
