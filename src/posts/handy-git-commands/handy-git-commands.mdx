@@ -66,3 +66,17 @@ The more dangerous method is to use the `git clean` command. This will delete an
 ```Shell
 git clean -n
 ```
+
+## Set new upstream origin
+
+This is useful if you want to switch the origin to a different branch, or if you initiated git on your local machine instead of cloning an existing repo.
+
+```
+git remote add origin [repo url]
+```
+
+If try to pull down the new upstream master and you get an error saying you have an issue with unrelated histories you will want to run the command again with the `--allow-unrelated-histories` flag.
+
+```shell
+ git pull origin master --allow-unrelated-histories
+```
