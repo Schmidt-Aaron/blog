@@ -88,12 +88,12 @@ const IndexPage = () => (
             In my professional career I have had the opportunity to wear many
             different hats, from managing a medical laboratory, running my own
             personal training studio to owning the online marketing of a growing
-            fertility clinic.
+            fertility clinic. I value learning and continuous self-education.
           </p>
           <p>
             I like to build websites using JavaScript (React + Node + Express).
-            Gatsby is my current go-to for most projects as it is a joy to work
-            with. Sometimes I use WordPress, but only for certain use-cases.{" "}
+            Gatsby is my current go-to for most projects as I find it a joy to
+            work with. Sometimes I use WordPress.{" "}
           </p>
 
           <p>
@@ -104,7 +104,7 @@ const IndexPage = () => (
             >
               see what I am currently reading
             </a>
-            ), cooking, kickball, hiking, and drinking a good IPA.
+            ), code, cooking, kickball, hiking, and drinking a good IPA.
           </p>
         </div>
       </section>
