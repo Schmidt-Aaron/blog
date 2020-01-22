@@ -6,25 +6,23 @@ tags: ["CSS", "JS"]
 status: draft
 ---
 
-This is a quick primer on how to capitalize the first letter of a string. Outside of longer form content (think complete sentences), I prefer to standardize all my strings to be lowercase. This helps ensure a consistent formatting whenever I am working with any string values. Then whenever I need to capitalize the first letter of a string I will do so programmatically on a case-by-case basis. 
+This is a quick primer on how to capitalize the first letter of a string. Outside of longer form content (think complete sentences), I prefer to standardize all my strings to be lowercase. This helps ensure a consistent formatting whenever I am working with any string values. Then whenever I need to capitalize the first letter of a string I will do so programmatically on a case-by-case basis.
 
 ## Frontend Solution
 
-On the frontend my preferred solution is to use the CSS property 'text-transform: capitalize'. Typically, I will make a helper class with only this property and then wrap my target word in a span containing my helper class like so. 
+On the frontend my preferred solution is to use the CSS property 'text-transform: capitalize'. Typically, I will make a helper class with only this property and then wrap my target word in a span containing my helper class like so.
 
 ```html
-//css
-.capitalize {
-  text-transform: capitalize;
-}
-
-//html
-<p>My name is <span class="capitalize">aaron</span> and I live in <span class="capitalize">seattle</span>.</p>
+//css .capitalize { text-transform: capitalize; } //html
+<p>
+  My name is <span class="capitalize">aaron</span> and I live in
+  <span class="capitalize">seattle</span>.
+</p>
 
 // => My name is Aaron and I live in Seattle.
 ```
 
-If you ae using a CSS-in-JS or any other modular CSS strategy then I would advise creating a small shared CSS file for this type of helper. 
+If you ae using a CSS-in-JS or any other modular CSS strategy then I would advise creating a small shared CSS file for this type of helper.
 
 ## Backend / JavaScript Way
 
@@ -45,7 +43,7 @@ function capitalize(str) {
 }
 ```
 
-Using an Array 
+Using an Array
 
 ```JavaScript
 const string = "i love to scuba dive";
@@ -66,11 +64,10 @@ We can also use Regex
 const string = "coffee is wonderful";
 
 function capitalize(str) {
-  return str.replace(/^\w/, char => char.toUpperCase()) // "coffee is wonderful"
+  return str.replace(/^\w/, char => char.toUpperCase()) // "Coffee is wonderful"
 }
 ```
 
-I hope this was helpful! As always, these are just a few of the myriad ways to capitalize the first letter of a string. 
+I hope this was helpful! As always, these are just a few of the myriad ways to capitalize the first letter of a string.
 
 Cheers!
-
