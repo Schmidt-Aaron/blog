@@ -13,7 +13,7 @@ Like most things in programing, there are multiple ways to go about solving the 
 
 These approaches loop through the input array and use some sort of logic to determine
 
-```Javascript
+```js
 const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
 
 // basic for loop
@@ -48,18 +48,17 @@ console.log(finalArray3) // [2, 3, 4, 5, 6, 34]
 
 ## 2. Sort to Remove
 
-```Javascript
-
-const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
-const finalArray = [];
-let temp;
+```js
+const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34]
+const finalArray = []
+let temp
 
 startingArray.sort() // [2, 3, 3, 34, 4, 4, 5, 5, 6]
 
-for (let i = 0; i<startingArray.length; i++) {
-  if(startingArray[i] !== temp) {
-    finalArray.push(startingArray[i]);
-    temp = startingArray[i];
+for (let i = 0; i < startingArray.length; i++) {
+  if (startingArray[i] !== temp) {
+    finalArray.push(startingArray[i])
+    temp = startingArray[i]
   }
 }
 
@@ -68,45 +67,41 @@ console.log(finalArray) // [2, 3, 34, 4, 5, 6]
 
 ## 3. Using .filter()
 
-```Javascript
-const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
+```js
+const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34]
 
 const finalArray = startingArray.filter((item, index) => {
-  return startingArray.indexOf(item) === index;
+  return startingArray.indexOf(item) === index
 })
 console.log(finalArray) // [2, 3, 4, 5, 6, 34]
-
 ```
 
 ## 4. Using .reduce()
 
 This method
 
-```Javascript
-const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
+```js
+const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34]
 const final = startingArray.reduce((accumulator, currentValue) => {
   return accumulator.includes(currentValue)
-  ? accumulator
-  : [...accumulator, currentValue]
+    ? accumulator
+    : [...accumulator, currentValue]
 }, [])
-
-
 ```
 
 ## 5. Using a Hash Table / Dictionary
 
 This method uses a dictionary to store the values. Objects cannot have duplicate keys so each value can only be stored once. After the values are stored they are then assigned to a new array by using a for...of loop. One possible issue of this approach is that there could be a type conversion in the resultant values.
 
-```Javascript
-const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
-let obj = {};
+```js
+const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34]
+let obj = {}
 
 // loops through the array and stores each value as a separate key in the obj
-for( let i of startingArray) {
-  obj[i] = true;
+for (let i of startingArray) {
+  obj[i] = true
 }
 // console.log(obj) // {2: true, 3: true, 4: true, 5: true, 6: true, 34: true}
-
 
 // converts the unique object keys into a new array
 let finalArray = Object.keys(obj)
@@ -119,11 +114,11 @@ console.log(finalArray) // ["2", "3", "4", "5", "6", "34"]
 
 I saved my favorite approach for last. This way utilizes the Set data structure. Sets are a new addition that was introduced to JavaScript in ES6. They are perfect for this problem because they cannot have duplicate values by default. When you convert an array to a set any duplicate values are stripped away.
 
-```Javascript
-const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
+```js
+const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34]
 
 // convert the Array into a Set via the constructor method
-const uniques = new Set(startingArray);
+const uniques = new Set(startingArray)
 
 // convert the set back into an Array
 const uniqueArray = [...uniques]
@@ -133,11 +128,11 @@ console.log(uniqueArray) // [2, 3, 4, 5, 6, 34]
 
 You can also do this in one line of code using the spread operator, but I find the more verbose method above easier to read.
 
-```Javascript
-const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34];
+```js
+const startingArray = [2, 3, 4, 5, 6, 5, 4, 3, 34]
 
 // array --> set --> array
-const uniqueArray = [... new Set(startingArray)]
+const uniqueArray = [...new Set(startingArray)]
 
 console.log(uniqueArray) // [2, 3, 4, 5, 6, 34]
 ```

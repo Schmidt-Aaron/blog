@@ -6,9 +6,9 @@ tags: ["CS", "JS", "algorithms"]
 status: draft
 ---
 
-Insertion sort is another common sorting algorithm. It sorts elements by repeatedly comparing them to their neighbor on the left and swapping if the left hand element is larger than the current element. It begins on the left hand side or 0 index of an array and advances one element at a time. A real life example would be sorting a hand of cards where the player moves each card to its proper place one card at a time. 
+Insertion sort is another common sorting algorithm. It sorts elements by repeatedly comparing them to their neighbor on the left and swapping if the left hand element is larger than the current element. It begins on the left hand side or 0 index of an array and advances one element at a time. A real life example would be sorting a hand of cards where the player moves each card to its proper place one card at a time.
 
-Insertion sort has a variable time complexity ranging. In the worst case it is O(n*2) if the list is in reverse order and every element requires sorting. In the bes case it is O(n) if the list is already sorted. 
+Insertion sort has a variable time complexity ranging. In the worst case it is O(n\*2) if the list is in reverse order and every element requires sorting. In the bes case it is O(n) if the list is already sorted.
 
 ## Step-by-step Example
 
@@ -17,72 +17,81 @@ Starting array: [3, 1, 10, 9, 4, 7]
 ### Fist Pass
 
 Index to be sorted = 0.
-[**3**, 1, 10, 9, 4, 7] => [**3**, 1, 10, 9, 4, 7]
-There is no change as the element in index 0 does not hand a neighbor on the left hand side. 
 
-## Second Pass
+[**3**, 1, 10, 9, 4, 7] => [**3**, 1, 10, 9, 4, 7]
+
+There is no change as the element in index 0 does not hand a neighbor on the left hand side.
+
+### Second Pass
 
 Index to be sorted = 1.
+
 [3, **1**, 10, 9, 4, 7] => [**1**, 3, 10, 9, 4, 7]
+
 1 < 3 so the two element are swapped. There are no more neighbors to compare with after that so the sorting algorithm moves on to the next element.
 
-## Third Pass
+### Third Pass
 
 Index to be sorted = 2.
+
 [1, 3, **10**, 9, 4, 7] => [1, 3, **10**, 9, 4, 7]
+
 No change as the selected element is greater than its neighbor.
 
-## Forth Pass
+### Forth Pass
 
 Index to be sorted = 3.
+
 [1, 3, 10, **9**, 4, 7] => [1, 3, **9**, 10, 4, 7]
+
 9 < 10 so they are swapped. 9 > 3 so no further swaps are made.
 
-## Fifth Pass
+### Fifth Pass
 
 Index to be sorted = 4.
+
 [1, 3, 9, 10, **4**, 7] => [1, 3, **4**, 9, 10, 7]
+
 4 < 10 so they are swapped. 4 < 9 so they are swapped. 4 > 3 so no further swaps are made.
 
-## Sixth Pass
+### Sixth Pass
 
 Index to be sorted = 5.
+
 [1, 3, 4, 9, 10, **7**] => [1, 3, 4, **7**, 9, 10]
-7 < 10 so they are swapped. 7 < 9 so they are swapped. 7 > 4 so no further swaps are made. This was the last index of the array so the algorithm is finished sorting. 
+
+7 < 10 so they are swapped. 7 < 9 so they are swapped. 7 > 4 so no further swaps are made. This was the last index of the array so the algorithm is finished sorting.
 
 ## JavaScript Implementation of Insertion Sort
 
-```JavaScript
-const startingArray = [3, 1, 10, 9, 4, 7];
+```js
+const startingArray = [3, 1, 10, 9, 4, 7]
 
 function insertionSort(arr) {
-  
   // loop through the array
-  for(let i = 1; i < arr.length; i++) {
+  for (let i = 1; i < arr.length; i++) {
     // current element
-    let current = arr[i];
+    let current = arr[i]
 
-    let neighborIndex = i - 1;
-    
+    let neighborIndex = i - 1
+
     // move current element to its proper place
     while (current < arr[neighborIndex] && neighborIndex >= 0) {
-      
       // advance neighbor one place to the right
-      arr[neighborIndex + 1] = arr[neighborIndex];
-      
+      arr[neighborIndex + 1] = arr[neighborIndex]
+
       // lower the index so the while loop can fire again, if needed
-      neighborIndex -= 1;
-      
+      neighborIndex -= 1
     }
     // assign the current element to new location
-    arr[neighborIndex + 1] = current;
+    arr[neighborIndex + 1] = current
   }
-  return arr;
+  return arr
 }
 
 insertionSort(startingArray)
 ```
 
-Insertion sort is most useful when either the number of elements is small, or the input array is almost sorted. 
+Insertion sort is most useful when either the number of elements is small, or the input array is almost sorted.
 
 Cheers!

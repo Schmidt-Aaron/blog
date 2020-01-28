@@ -13,7 +13,6 @@ import Image from "gatsby-image"
 import DefaultPreviewImage from "./PreviewImage"
 
 const PostPreview = ({ post }) => {
-  console.log(post)
   return (
     <article
       css={css`

@@ -26,7 +26,7 @@ There is a good instructions on the [Gatsby docs](https://www.gatsbyjs.org/docs/
 
 - add to VScode settings
 
-```JSON
+```json
 "files.associations": {
      "*.md": "mdx"
    },
@@ -44,7 +44,7 @@ Note: This guide assumes that the images are located in the same directory relat
 
 - Configure your gatsby-plugin-mdx plugin in your gatsby-config.js file. If you haven't already installed gatsby-plugin-mdx instructions to do so are at the start of this post. There are a ton of customizations you can do so I suggest reading through the documentation. Two options that I found especially useful were maxWidth and quality.
 
-```Javascript
+```js
 // gatsby-config.js
 module.exports = {
   plugins: [
@@ -58,11 +58,11 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-            // It's important to specify the maxWidth (in pixels) of
-            // the content container as this plugin uses this as the
-            // base for generating different widths of each image.
-            maxWidth: 960,
-            quality: 80
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 960,
+              quality: 80,
             },
           },
         ],
@@ -74,7 +74,7 @@ module.exports = {
 
 At the writing of this guide(Aug 2019) there is a [bug](https://github.com/gatsbyjs/gatsby/issues/15486) about how gatsby deals with sub-plugins that may effect how gatsby-remark-images renders to the page. If you are seeing a lot of white space above your image add the following line below.
 
-```Javascript
+```js
 // gatsby-config.js
 module.exports = {
   plugins: [
@@ -89,11 +89,11 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-            // It's important to specify the maxWidth (in pixels) of
-            // the content container as this plugin uses this as the
-            // base for generating different widths of each image.
-            maxWidth: 960,
-            quality: 80
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 960,
+              quality: 80,
             },
           },
         ],
@@ -105,13 +105,12 @@ module.exports = {
 
 - Now you can add your image directly inside your MDX file using regular markdown.
 
-```Markdown
+```md
 ---
 title: Sample Posts
 slug: sample-post
 author: John Smith
 ---
-
 
 ![alt text here](./relative_path_to_image)
 ```
@@ -122,7 +121,7 @@ Viola! Now you should be seeing your image and it should also be fully optimized
 
 - (Optional) Add relative path to an image in your post frontmatter this step is useful if you want to query the image via graphql elsewhere
 
-```Markdown
+```md
 ---
 title: Sample Posts
 slug: sample-post
@@ -147,7 +146,7 @@ npm i gatsby-transformer-sharp gatsby-plugin-sharp
 
 Update your gatsby-config.js file to include the dependencies, and make sure that your source plugin is configured to your image directory. This will help enable graphql queries for the images.
 
-```javascript
+```js
 // gastby-config.js
 module.exports = {
   plugins: [

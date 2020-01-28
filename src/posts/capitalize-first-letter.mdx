@@ -30,38 +30,38 @@ If I am working on the backend or anywhere the solution above wouldn't apply the
 
 Using String methods.
 
-```JavaScript
-const string = "my favorite food is pizza";
+```js
+const string = "my favorite food is pizza"
 
 function capitalize(str) {
-  const upper = str.charAt(0).toUpperCase(); // "M"
-  const restOfTheString = str.substring(1); // "y favorite food is pizza"
+  const upper = str.charAt(0).toUpperCase() // "M"
+  const restOfTheString = str.substring(1) // "y favorite food is pizza"
   const formattedString = upper.concat("", restOfTheString) // "My favorite food is pizza"
 
   // return our formatted string
-  return formattedString;
+  return formattedString
 }
 ```
 
 Using an Array
 
-```JavaScript
-const string = "i love to scuba dive";
+```js
+const string = "i love to scuba dive"
 
 function capitalize(str) {
-  const strArray = str.split(""); // ["i", " ", "l", "o"...]
+  const strArray = str.split("") // ["i", " ", "l", "o"...]
   strArray[0] = strArray[0].toUpperCase() // ["I", " ", "l", "o"...]
   const formattedString = strArray.join("") // "I love to scuba dive"
 
   // return our formatted string
-  return formattedString;
+  return formattedString
 }
 ```
 
 We can also use Regex
 
-```JavaScript
-const string = "coffee is wonderful";
+```js
+const string = "coffee is wonderful"
 
 function capitalize(str) {
   return str.replace(/^\w/, char => char.toUpperCase()) // "Coffee is wonderful"

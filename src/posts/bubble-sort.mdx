@@ -50,36 +50,35 @@ The array is sorted by the end of the third pass, but the algorithm needs one wh
 
 Here in one way to implement a bubble sort using JavaScript.
 
-```JavaScript
-const startingArray = [3, 9, 5, 1, 2];
+```js
+const startingArray = [3, 9, 5, 1, 2]
 
 function bubbleSort(arr) {
-  let finished = false; // exit condition
-  let tempArr = Array.from(arr); // make a copy of our starting array
+  let finished = false // exit condition
+  let tempArr = Array.from(arr) // make a copy of our starting array
 
-  while(!finished) {
-    for( let i = 0; i < tempArr.length - 1;) {
-      let first = tempArr[i];
-      let second = tempArr[i+1];
+  while (!finished) {
+    for (let i = 0; i < tempArr.length - 1; ) {
+      let first = tempArr[i]
+      let second = tempArr[i + 1]
 
       // set exit condition at start of loop
-      if(i === 0) {
-        finished = true;
+      if (i === 0) {
+        finished = true
       }
 
       // swap if first element is greater than the second element
-      if( first > second) {
-        [tempArr[i], tempArr[i+1]] = [tempArr[i+1], tempArr[i]] // swap using ES6 destructuring!
-        finished = false;
+      if (first > second) {
+        ;[tempArr[i], tempArr[i + 1]] = [tempArr[i + 1], tempArr[i]] // swap using ES6 destructuring!
+        finished = false
       }
 
-
       // repeat loop if an item was swapped
-      if(finished === false && i === tempArr.length - 2) {
+      if (finished === false && i === tempArr.length - 2) {
         console.log("Starting the loop again!")
         i = 0
       } else {
-        i++;
+        i++
       }
     }
   }

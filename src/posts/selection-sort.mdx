@@ -42,39 +42,39 @@ unsorted index = 4;
 
 ## Implementation
 
-```JavaScript
-const startingArray = [2, 9, 1, 4, 8];
+```js
+const startingArray = [2, 9, 1, 4, 8]
 
 function selectionSort(arr) {
-  let unsortedArr = [...arr];
-  let sortedArr = [];
-  let arrSize = unsortedArr.length;
-  let n = 0;
+  let unsortedArr = [...arr]
+  let sortedArr = []
+  let arrSize = unsortedArr.length
+  let n = 0
 
   // loop once for every item in the starting array
-  while(n < arrSize) {
-    let minimum = unsortedArr[0];
-    let index;
+  while (n < arrSize) {
+    let minimum = unsortedArr[0]
+    let index
 
     // loop through unsorted array and find minimum
-    for(let i = 0; i < arrSize; i++) {
-      if(unsortedArr[i] < minimum){
-        minimum = unsortedArr[i];
-        index = i;
+    for (let i = 0; i < arrSize; i++) {
+      if (unsortedArr[i] < minimum) {
+        minimum = unsortedArr[i]
+        index = i
       }
     }
 
     // push minimum value to sorted array
-    sortedArr.push(minimum);
+    sortedArr.push(minimum)
 
     // remove minimum value from unsorted array
     unsortedArr.splice(index, 1)
 
     // advance the outer counter
-    n++;
+    n++
   }
 
-  return sortedArr;
+  return sortedArr
 }
 
 selectionSort(startingArray) // [1, 2, 4, 8, 9]

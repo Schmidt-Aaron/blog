@@ -20,7 +20,7 @@ Context is way to create a global data store that can be accessed by any of the 
 
 Example without context.
 
-```javascript
+```js
 // sample user object
 const user = {
   name: "Aaron",
@@ -51,7 +51,7 @@ As you can see above we are manually passing down the props from our app compone
 
 First we need to create the context object that will serve as our data store. Context should generally only store one thing (object, array, string, ..etc) because whenever one item in context is changed it will trigger a re-render and this could have negative performance implications.
 
-```javascript
+```js
 // sample user object
 const user = {
   name: "Aaron",
@@ -64,7 +64,7 @@ const userContext = React.createContext(null)
 
 Then we will wrap our Profile component in a context.Provider. This will enable all the child components of this tree to access the context object.
 
-```javascript
+```js
 // wrap our profile
 const App = () => {
   return (
@@ -83,7 +83,7 @@ Then we will access, or 'consume' our context. I have demonstrated two different
 
 Both are viable ways to access your context, but I prefer the brevity and clarity of the useContext method.
 
-```javascript
+```js
 // skip intermediate component
 const Profile = () => {
   return (
@@ -113,7 +113,7 @@ const Food = () => {
 
 Both of the above methods utilize functional components. If you are using a class-based component you can also access your context by using the pattern below.
 
-```javascript
+```js
 class Food extends React.Component {
   static contextType = userContext
   render() {
@@ -129,7 +129,7 @@ It is possible to use many different context objects in your project. The contex
 
 This means we can use as many context providers throughout our application as we want. These can be stacked at the top level like the example below or strewn throughout the app component tree.
 
-```javascript
+```js
 // sample user object
 const user = {
   name: "Aaron",
