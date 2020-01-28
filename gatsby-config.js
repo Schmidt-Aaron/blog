@@ -4,7 +4,19 @@
 //   path: `.env.${process.env.NODE_ENV}`,
 // })
 
-const siteConfig = require("./siteConfig")
+// import configuration data
+const siteConfig = require("./src/data/siteConfig")
+
+// destructure config data
+const {
+  googleAnalyticsID,
+  title,
+  description,
+  titleShort,
+  themeColor,
+  backgroundColor,
+  logo,
+} = siteConfig
 
 module.exports = {
   siteMetadata: {
@@ -14,7 +26,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-149297217-1",
+        trackingId: googleAnalyticsID,
         // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: false,
         // Setting this parameter is optional
@@ -57,11 +69,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Aaron Schmidt's Website`,
-        short_name: `Aaron Schmidt`,
+        name: title,
+        short_name: titleShort,
         start_url: `/`,
-        background_color: `#FFF`,
-        theme_color: `#3e94ec`,
+        background_color: backgroundColor,
+        theme_color: themeColor,
         display: `minimal-ui`,
         icon: `src/images/favicon/android-chrome-512x512.png`, // This path is relative to the root of the site.
       },
@@ -176,7 +188,7 @@ module.exports = {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         // Setting a color is optional.
-        color: `tomato`,
+        color: themeColor,
         // Disable the loading spinner.
         showSpinner: false,
       },
