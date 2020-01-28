@@ -4,6 +4,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
+
 /** @jsx jsx */
 import React from "react"
 import PropTypes from "prop-types"
@@ -31,7 +32,7 @@ const Layout = ({ children }) => {
         min-height: 100vh;
         display: grid;
         grid-gap: 1rem;
-        grid-template-rows: auto 1fr auto;
+        grid-template-rows: 60px 1fr 100px;
       `}
     >
       <Header siteTitle={data.site.siteMetadata.title} />

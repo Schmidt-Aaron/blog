@@ -21,26 +21,17 @@ const MenuLink = styled(Link)`
 const Header = ({ siteTitle }) => (
   <header
     css={css`
-      background: #834d9b; /* fallback for old browsers */
-      background: -webkit-linear-gradient(
-        to right,
-        #d04ed6,
-        #834d9b
-      ); /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(
-        to right,
-        #d04ed6,
-        #834d9b
-      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-      margin-bottom: 1.45rem;
+      height: 60px;
+      width: 100%;
+      margin: 0 auto;
+      box-shadow: 0px 0px 10px 0px rgba(25, 25, 25, 0.2);
     `}
   >
     <div
       css={css`
         margin: 0 auto;
+        height: 100%;
         max-width: 960px;
-        padding: 0.5rem 1.0875rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -55,18 +46,12 @@ const Header = ({ siteTitle }) => (
         <Link
           to="/"
           css={css`
-            color: #eee;
+            color: rgba(62, 148, 236, 0.8);
             text-decoration: none;
           `}
         >
           {/* {siteTitle} */}
-          <Logo
-            alt={siteTitle}
-            css={css`
-              fill: white;
-              stroke: white;
-            `}
-          />
+          Aaron
         </Link>
       </h1>
       <NavMenu />

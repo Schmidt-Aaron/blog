@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { css, jsx } from "@emotion/core"
 
 // for post preview page
-const PreviewImage = props => {
+const DefaultPreviewImage = props => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
@@ -31,4 +31,4 @@ const PreviewImage = props => {
   )
 }
 
-export default PreviewImage
+export default DefaultPreviewImage

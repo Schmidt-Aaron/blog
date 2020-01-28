@@ -30,8 +30,8 @@ const year = new Date().getFullYear()
 const IndexPage = () => (
   <>
     <SEO title="Aaron Schmidt | Coming soon to a browser near you!" />
-    <main>
-      <header>
+    <main className="main">
+      <header className="tempHeader">
         <div>
           <span className="brand">&lt;Aaron /&gt;</span>
         </div>
@@ -53,7 +53,7 @@ const IndexPage = () => (
         </a>{" "}
         ~
       </div>
-      <section className="first-section">
+      <section className="section">
         <div>
           <h1>Hi, I'm Aaron!</h1>
           <h3>Web Developer | Digital Marketer | Audiobook Fanatic</h3>
@@ -69,7 +69,7 @@ const IndexPage = () => (
           </p>
         </div>
       </section>
-      <section>
+      <section className="section">
         <div>
           <h2>About Me.</h2>
 
@@ -108,7 +108,7 @@ const IndexPage = () => (
           </p>
         </div>
       </section>
-      <section>
+      <section className="section">
         <div>
           <h2>Getting in touch.</h2>
           <p className="contact-fullscreen">
@@ -147,7 +147,7 @@ const IndexPage = () => (
           </div>
         </div>
       </section>
-      <footer>
+      <footer className="footer">
         <div>
           <p>
             &copy;{year} Aaron Schmidt -{" "}

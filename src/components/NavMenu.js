@@ -46,11 +46,11 @@ const MenuLink = props => {
   const linkStyle = css`
     margin-right: 1rem;
     justify-self: flex-end;
-    color: #f8f8f8;
+    color: rgba(62, 148, 236, 0.8);
     text-decoration: none;
 
     &:hover {
-      color: white;
+      color: rgba(62, 148, 236, 0.6);
     }
 
     &:after {
