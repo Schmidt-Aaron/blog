@@ -2,15 +2,22 @@
   "globals": {
     "__PATH_PREFIX__": true
   },
-  "extends": "react-app",
-  "plugins": ["emotion", "react-hooks", "jsx-a11y"],
+  "extends": ["react-app", "plugin:jsx-a11y/recommended", "prettier"],
+  "plugins": ["react", "emotion", "react-hooks", "jsx-a11y", "import"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
   "rules": {
     "emotion/jsx-import": "error",
     "emotion/no-vanilla": "error",
     "emotion/import-from-emotion": "error",
     "emotion/styled-import": "error",
     "emotion/syntax-preference": [2, "string"], // vs object
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/rules-of-hooks": "warn",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/prop-types": "warn",
+    "react/react-in-jsx-scope": "warn"
   }
 }

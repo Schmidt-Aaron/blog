@@ -1,3 +1,4 @@
+/** @jsx jsx */
 import styled from "@emotion/styled"
 
 const TitleWithGradient = styled("h1")`

@@ -4,11 +4,11 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-
+/** @jsx jsx */
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { css } from "@emotion/core"
+import { css, jsx } from "@emotion/core"
 
 import Header from "./header"
 import "./layout.css"

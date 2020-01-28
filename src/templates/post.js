@@ -3,15 +3,16 @@
  * Individual blog post template from MDX
  *
  */
-
+/** @jsx jsx */
 import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { css } from "@emotion/core"
+import { css, jsx } from "@emotion/core"
 import Layout from "../components/layout"
 import ReadLink from "../components/readLink"
 import "./post.css"
 import moment from "moment"
+import PropTypes from "prop-types"
 
 export const query = graphql`
   query($slug: String!) {
@@ -51,3 +52,8 @@ const PostTemplate = ({ data: { mdx: post } }) => (
 )
 
 export default PostTemplate
+
+PostTemplate.propTypes = {
+  data: PropTypes.object,
+  mdx: PropTypes.object,
+}

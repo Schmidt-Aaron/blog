@@ -3,7 +3,7 @@
  * styled Link component used in post preview
  *
  */
-
+/** @jsx jsx */
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
 

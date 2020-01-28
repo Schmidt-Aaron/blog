@@ -33,7 +33,7 @@ const IndexPage = () => (
     <main>
       <header>
         <div>
-          <span className="brand">&lt;Aaron /></span>
+          <span className="brand">&lt;Aaron /&gt;</span>
         </div>
       </header>
       <div className="contact-me">

@@ -1,10 +1,11 @@
+/** @jsx jsx */
 import React from "react"
 import Image from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
-import { css } from "@emotion/core"
+import { css, jsx } from "@emotion/core"
 
 // for post preview page
-export const previewImage = () => {
+const PreviewImage = props => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
@@ -29,3 +30,5 @@ export const previewImage = () => {
     />
   )
 }
+
+export default PreviewImage

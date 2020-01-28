@@ -3,7 +3,7 @@ const path = require("path")
 module.exports = {
   title: `Aaron Schmidt's Website`,
   titleShort: `Aaron Schmidt`,
-  description: `Aaron Schmidt's is a full stack web developer specializing in modern JavaScript.`,
+  description: `Aaron Schmidt is a full stack web developer specializing in modern JavaScript.`,
   url: `https://aaronms.com`,
   siteUrl: `https://aaronms.com`,
   siteRepo: `https://github.com/Schmidt-Aaron/blog`,

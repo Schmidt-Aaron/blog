@@ -1,7 +1,10 @@
+/** @jsx jsx */
+
 import React from "react"
 import styled from "@emotion/styled"
 import BackgroundImage from "gatsby-background-image"
 import { Link, graphql, useStaticQuery } from "gatsby"
+import { css, jsx } from "@emotion/core"
 
 const ImageBackground = styled(BackgroundImage)`
   /* background-image: url("../images/jellyfish.jpg"); */
