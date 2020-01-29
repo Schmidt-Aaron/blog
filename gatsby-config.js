@@ -78,6 +78,7 @@ module.exports = {
         icon: `src/images/favicon/android-chrome-512x512.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-offline`,
     // generates a bundle size graph with the "analyze command"
     {
       resolve: "gatsby-plugin-webpack-bundle-analyzer",
@@ -193,8 +194,5 @@ module.exports = {
         showSpinner: false,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }

@@ -39,19 +39,20 @@ const Header = ({ siteTitle }) => (
     >
       <h1
         css={css`
-          font-size: 1.5rem;
+          font-size: 1.2rem;
+          font-weight: 400;
           margin: 0;
         `}
       >
         <Link
           to="/"
           css={css`
-            color: rgba(62, 148, 236, 0.8);
+            color: hsla(0, 0%, 0%, 0.8);
             text-decoration: none;
           `}
         >
           {/* {siteTitle} */}
-          Aaron
+          <span className="brand">&lt;Aaron /&gt;</span>
         </Link>
       </h1>
       <NavMenu />

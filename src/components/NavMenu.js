@@ -93,7 +93,7 @@ const NavMenu = () => {
       <MenuLink activeClassName="active" to="/about">
         About
       </MenuLink>
-      <MenuLink to="/projects">Projects</MenuLink>
+      {/* <MenuLink to="/projects">Projects</MenuLink> */}
       <MenuLink to="/posts">Blog</MenuLink>
       <MenuLink to="/contact">Contact</MenuLink>
     </nav>

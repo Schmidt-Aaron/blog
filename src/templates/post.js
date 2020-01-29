@@ -8,11 +8,12 @@ import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { css, jsx } from "@emotion/core"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import ReadLink from "../components/readLink"
 import "./post.css"
 import moment from "moment"
 import PropTypes from "prop-types"
+import TitleWithGradient from "../components/TitleWithGradient"
 
 export const query = graphql`
   query($slug: String!) {
@@ -42,7 +43,14 @@ const PostTemplate = ({ data: { mdx: post } }) => {
           margin: auto;
         `}
       >
-        <h1>{post.frontmatter.title}</h1>
+        <TitleWithGradient
+          css={css`
+            font-size: 3rem;
+            line-height: 4rem;
+          `}
+        >
+          {post.frontmatter.title}
+        </TitleWithGradient>
         <p
           css={css`
             font-size: 0.75rem;
