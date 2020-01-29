@@ -7,7 +7,7 @@
 /** @jsx jsx */
 import React from "react"
 import { css, jsx } from "@emotion/core"
-import ReadLink from "./readLink"
+import ReadLink from "./ReadLink"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
 import DefaultPreviewImage from "./PreviewImage"

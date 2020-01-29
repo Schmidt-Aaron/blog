@@ -2,9 +2,9 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/Layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-import Hero from "../components/hero"
+import Image from "../components/Image"
+import SEO from "../components/Seo"
+import Hero from "../components/Hero"
 
 //Temp imports
 import "../templates/tempStyles.css"

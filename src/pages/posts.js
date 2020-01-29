@@ -1,9 +1,9 @@
 // blog post list page
 import React from "react"
 import { Link } from "gatsby"
-import usePosts from "../hooks/use-Posts"
+import usePosts from "../hooks/usePosts"
 import Layout from "../components/Layout"
-import SEO from "../components/seo"
+import SEO from "../components/Seo"
 import PostPreview from "../components/PostPreview"
 import TitleWithGradient from "../components/TitleWithGradient"
 
