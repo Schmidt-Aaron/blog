@@ -52,7 +52,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve("./src/components/layout.js"), // path to layout template
+          default: require.resolve("./src/components/Layout.js"), // path to layout template
         },
         gatsbyRemarkPlugins: [
           {
@@ -82,7 +82,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve("./src/components/layout.js"),
+          default: require.resolve("./src/components/Layout.js"),
         },
         plugins: [`gatsby-remark-images`], // <- add this line
         gatsbyRemarkPlugins: [

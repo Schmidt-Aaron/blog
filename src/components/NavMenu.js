@@ -58,7 +58,7 @@ const MenuLink = props => {
       display: block;
       width: 0%;
       padding-top: 0px;
-      border-bottom: 1px solid #f8f8f8; /* TODO change color*/
+      border-bottom: 1px solid #11998e; /* TODO change color*/
       transition: all 0.3s ease-in;
     }
 
