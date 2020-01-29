@@ -104,7 +104,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve("./src/components/Layout.js"),
+          default: require.resolve("./src/components/layout.js"),
         },
         // enables gatsby sharp for images linked in mdx files
         plugins: [
