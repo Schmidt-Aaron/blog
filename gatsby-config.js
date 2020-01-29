@@ -186,6 +186,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: { "/sw.js": ["Cache-Control: no-cache"] },
+      },
+    },
+    {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         // Setting a color is optional.
