@@ -26,3 +26,8 @@ export const onServiceWorkerUpdateReady = () => {
     window.location.reload()
   }
 }
+
+// require fonts
+require("typeface-hind-madurai")
+require("typeface-lora")
+require("typeface-montserrat")

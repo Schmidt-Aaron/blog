@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Nova+Mono&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Hind+Madurai|Lora|Montserrat&display=swap");
+/* @import url("https://fonts.googleapis.com/css?family=Nova+Mono&display=swap"); */
+/* @import url("https://fonts.googleapis.com/css?family=Hind+Madurai|Lora|Montserrat&display=swap"); */
 
 * {
   box-sizing: border-box;
@@ -34,7 +34,7 @@ h3 {
   font-family: Lora, sans-serif;
   font-size: 1rem;
   font-style: italic;
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .main {
@@ -83,11 +83,11 @@ h3 {
 
 .contact-me a {
   text-decoration: none;
-  color: rgba(62, 148, 236, 1);
+  color: rgba(4, 93, 185, 1);
 }
 
 .contact-me a:hover {
-  color: rgba(62, 148, 236, 0.8);
+  color: rgba(4, 93, 185, 0.7);
 }
 
 .contact-mobile {
