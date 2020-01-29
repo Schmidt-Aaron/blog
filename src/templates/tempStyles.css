@@ -19,7 +19,7 @@ h4,
 h5,
 h6 {
   font-family: Montserrat, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: rgba(62, 148, 236, 0.8);
+  color: rgba(62, 148, 236, 1);
 }
 
 h1 {
@@ -34,7 +34,7 @@ h3 {
   font-family: Lora, sans-serif;
   font-size: 1rem;
   font-style: italic;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .main {
@@ -83,11 +83,11 @@ h3 {
 
 .contact-me a {
   text-decoration: none;
-  color: rgba(62, 148, 236, 0.8);
+  color: rgba(62, 148, 236, 1);
 }
 
 .contact-me a:hover {
-  color: rgba(62, 148, 236, 1);
+  color: rgba(62, 148, 236, 0.8);
 }
 
 .contact-mobile {

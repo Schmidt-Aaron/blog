@@ -69,7 +69,7 @@ function SEO({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     >
-      <link
+      {/* <link
         rel="apple-touch-icon"
         sizes="180x180"
         href="../images/favicon/apple-touch-icon.png"
@@ -85,7 +85,7 @@ function SEO({ description, lang, meta, title }) {
         type="image/png"
         sizes="16x16"
         href="../images/favicon/favicon-16x16.png"
-      />
+      /> */}
     </Helmet>
   )
 }

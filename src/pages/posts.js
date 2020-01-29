@@ -6,6 +6,7 @@ import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import PostPreview from "../components/PostPreview"
 import TitleWithGradient from "../components/TitleWithGradient"
+import PageFooterLinks from "../components/PageFooterLinks"
 
 const Posts = () => {
   const posts = usePosts()
@@ -18,6 +19,12 @@ const Posts = () => {
       {posts.map(post => (
         <PostPreview key={post.slug} post={post} />
       ))}
+      <PageFooterLinks
+        leftLinkTo="/"
+        leftLinkText="Go Home"
+        rightLinkTo="/about"
+        rightLinkText="Read About Me"
+      />
     </Layout>
   )
 }

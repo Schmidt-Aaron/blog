@@ -1,9 +1,10 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import TitleWithGradient from "../components/TitleWithGradient"
+import ReadLink from "../components/ReadLink"
+import PageFooterLinks from "../components/PageFooterLinks"
 
 const About = () => (
   <Layout>
@@ -43,7 +44,13 @@ const About = () => (
       </a>
       ), code, cooking, kickball, hiking, and a good IPA.
     </p>
-    <Link to="/">Back to home</Link>
+
+    <PageFooterLinks
+      leftLinkTo="/"
+      leftLinkText="Go Home"
+      rightLinkTo="/posts"
+      rightLinkText="See Recent Posts"
+    />
   </Layout>
 )
 
