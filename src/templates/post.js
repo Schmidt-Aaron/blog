@@ -22,34 +22,47 @@ export const query = graphql`
         date
       }
       body
+      fileAbsolutePath
     }
   }
 `
+// move to helpers?
+const PostTemplate = ({ data: { mdx: post } }) => {
+  // get path to source code for post
+  const gitHubURL = `https://github.com/Schmidt-Aaron/blog/blob/master/`
+  const regex = /^.*blog\//
+  const modifiedPath = post.fileAbsolutePath.replace(regex, "")
+  const newPath = gitHubURL + modifiedPath
 
-const PostTemplate = ({ data: { mdx: post } }) => (
-  <Layout>
-    <article
-      css={css`
-        max-width: 600px;
-        margin: auto;
-      `}
-    >
-      <h1>{post.frontmatter.title}</h1>
-      <p
+  return (
+    <Layout>
+      <article
         css={css`
-          font-size: 0.75rem;
+          max-width: 600px;
+          margin: auto;
         `}
       >
-        Posted on{" "}
-        <time dateTime={post.frontmatter.date}>
-          {moment(post.frontmatter.date).format("LL")}
-        </time>
-      </p>
-      <MDXRenderer>{post.body}</MDXRenderer>
-      <ReadLink to="/posts">&larr; back to all posts</ReadLink>
-    </article>
-  </Layout>
-)
+        <h1>{post.frontmatter.title}</h1>
+        <p
+          css={css`
+            font-size: 0.75rem;
+          `}
+        >
+          Posted on{" "}
+          <time dateTime={post.frontmatter.date}>
+            {moment(post.frontmatter.date).format("LL")}
+          </time>
+        </p>
+        <MDXRenderer>{post.body}</MDXRenderer>
+        <p>
+          Find a mistake? Help me fix it by submitting a{" "}
+          <a href={newPath}>pull request</a>.
+        </p>
+        <ReadLink to="/posts">&larr; back to all posts</ReadLink>
+      </article>
+    </Layout>
+  )
+}
 
 export default PostTemplate
 

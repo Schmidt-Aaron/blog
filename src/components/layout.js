@@ -13,6 +13,7 @@ import { css, jsx } from "@emotion/core"
 
 import Header from "./header"
 import "./layout.css"
+import Footer from "./Footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -47,22 +48,7 @@ const Layout = ({ children }) => {
       >
         {children}
       </main>
-      <footer
-        css={css`
-          margin: 0 auto;
-          width: 100%;
-          max-width: 960px;
-          align-self: bottom;
-          text-align: center;
-        `}
-      >
-        © {new Date().getFullYear()}, {data.site.siteMetadata.author}. Made with
-        ❤️ and lots of ☕{` `}
-        <p>
-          Built using <a href="https://www.gatsbyjs.org">Gatsby</a> and hosted
-          on Netlify
-        </p>
-      </footer>
+      <Footer />
     </div>
   )
 }

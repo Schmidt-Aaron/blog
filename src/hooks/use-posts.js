@@ -5,6 +5,7 @@
  */
 import { graphql, useStaticQuery } from "gatsby"
 
+// get all the data we want
 const usePosts = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -14,8 +15,9 @@ const usePosts = () => {
             title
             slug
             alt
-            date
+            date(formatString: "DD-MM-YYYY")
             status
+            tags
             image {
               sharp: childImageSharp {
                 fluid(quality: 80, maxWidth: 100, maxHeight: 100) {
@@ -25,17 +27,24 @@ const usePosts = () => {
             }
           }
           excerpt
+          timeToRead
+          fileAbsolutePath
         }
       }
     }
   `)
 
+  // return it
   return data.allMdx.nodes.map(post => ({
     title: post.frontmatter.title,
     slug: post.frontmatter.slug,
     image: post.frontmatter.image,
     alt: post.frontmatter.alt,
     excerpt: post.excerpt,
+    tags: post.frontmatter.tags,
+    timeToRead: post.timeToRead,
+    path: post.fileAbsolutePath,
+    status: post.frontmatter.status,
   }))
 }
 
