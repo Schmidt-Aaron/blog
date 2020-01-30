@@ -36,7 +36,7 @@ const PostTemplate = ({ data: { mdx: post } }) => {
     process.env.NODE_ENV === "development" ? /^.*blog\// : /^.*repo\//
   const modifiedPath = post.fileAbsolutePath.replace(regex, "")
   const newPath = gitHubURL + modifiedPath
-  console.log(process.env.NODE_ENV, process.env)
+
   return (
     <Layout>
       <article
