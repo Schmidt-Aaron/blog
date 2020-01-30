@@ -14,6 +14,7 @@ import "./post.css"
 import moment from "moment"
 import PropTypes from "prop-types"
 import TitleWithGradient from "../components/TitleWithGradient"
+import SEO from "../components/Seo"
 
 export const query = graphql`
   query($slug: String!) {
@@ -39,6 +40,7 @@ const PostTemplate = ({ data: { mdx: post } }) => {
 
   return (
     <Layout>
+      <SEO title={post.frontmatter.title} />
       <article
         css={css`
           max-width: 600px;
