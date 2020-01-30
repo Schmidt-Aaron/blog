@@ -31,10 +31,12 @@ export const query = graphql`
 const PostTemplate = ({ data: { mdx: post } }) => {
   // get path to source code for post
   const gitHubURL = `https://github.com/Schmidt-Aaron/blog/blob/master/`
-  const regex = /^.*blog\//
+  // const regex = /^.*blog\/ / works on localhost
+  const regex =
+    process.env.NODE_ENV === "development" ? /^.*blog\// : /^.*repo\//
   const modifiedPath = post.fileAbsolutePath.replace(regex, "")
   const newPath = gitHubURL + modifiedPath
-
+  console.log(process.env.NODE_ENV, process.env)
   return (
     <Layout>
       <article
