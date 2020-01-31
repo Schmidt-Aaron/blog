@@ -11,7 +11,7 @@ const About = () => (
     <SEO title="About Aaron" />
     <TitleWithGradient>About Me</TitleWithGradient>
     <p>
-      Hi. My name is Aaron Schmidt. I am a web developer and digital marketer
+      Hi! My name is Aaron Schmidt. I am a web developer and digital marketer
       living in the beautiful Pacific Northwest. I spent my formative years
       around the ocean and as a result, I am a bit of an island boy at heart. I
       grew up playing in the woods and beaches of the San Juan Islands. After

@@ -64,14 +64,14 @@ const IndexPage = () => (
           </p>
 
           <p>
-            I am always on the lookout for my next project. If you have
+            I am always on the lookout for my new projects. If you have
             something in mind please get in contact :)
           </p>
         </div>
       </section>
       <section className="section">
         <div>
-          <h2>About Me.</h2>
+          <h2>About me.</h2>
 
           <p>
             I am a web developer and digital marketer living in the beautiful
