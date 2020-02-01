@@ -64,8 +64,8 @@ const IndexPage = () => (
           </p>
 
           <p>
-            I am always on the lookout for my new projects. If you have
-            something in mind please get in contact :)
+            I am always on the lookout for new projects. If you have something
+            in mind please get in contact :)
           </p>
         </div>
       </section>
