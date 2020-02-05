@@ -14,6 +14,7 @@ import { css, jsx } from "@emotion/core"
 import Header from "./Header"
 import "./layout.css"
 import Footer from "./Footer"
+import { HorizontalGradientBar } from "./TitleWithGradient"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -51,6 +52,7 @@ const Layout = ({ children }) => {
         {children}
       </main>
       <Footer />
+      <HorizontalGradientBar />
     </div>
   )
 }
