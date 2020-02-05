@@ -29,8 +29,8 @@ const PostPreview = ({ post }) => {
       <Link
         to={post.slug}
         css={css`
-          margin: 1rem 1rem 0 0;
-          width: 100px;
+          margin: 0 1rem 0 0;
+          width: 150px;
         `}
       >
         {// serve default image if no image declared in post frontmatter
@@ -40,7 +40,7 @@ const PostPreview = ({ post }) => {
           <Image
             fluid={post.image.sharp.fluid}
             css={css`
-              width: 100px;
+              width: 150px;
               * {
                 margin-top: 0;
               }
@@ -55,6 +55,8 @@ const PostPreview = ({ post }) => {
             to={post.slug}
             css={css`
               color: rgba(0, 100, 202, 1);
+              font-size: 2rem;
+              font-weight: 400;
             `}
           >
             {post.title}

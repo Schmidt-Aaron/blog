@@ -47,9 +47,9 @@ const About = () => (
 
     <PageFooterLinks
       leftLinkTo="/"
-      leftLinkText="Go Home"
+      leftLinkText="Home"
       rightLinkTo="/posts"
-      rightLinkText="See Recent Posts"
+      rightLinkText="Recent Posts"
     />
   </Layout>
 )

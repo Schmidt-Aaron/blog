@@ -21,9 +21,9 @@ const Posts = () => {
       ))}
       <PageFooterLinks
         leftLinkTo="/"
-        leftLinkText="Go Home"
+        leftLinkText="Home"
         rightLinkTo="/about"
-        rightLinkText="Read About Me"
+        rightLinkText="About Me"
       />
     </Layout>
   )

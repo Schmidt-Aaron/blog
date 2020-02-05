@@ -20,7 +20,7 @@ const usePosts = () => {
             tags
             image {
               sharp: childImageSharp {
-                fluid(quality: 80, maxWidth: 100, maxHeight: 100) {
+                fluid(quality: 80, maxWidth: 150, maxHeight: 150) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
