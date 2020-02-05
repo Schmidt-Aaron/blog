@@ -63,21 +63,34 @@ const PostPreview = ({ post }) => {
             {post.title}
           </Link>
         </h3>
-        <p>{post.excerpt}</p>
         <div
           css={css`
             display: flex;
             justify-content: space-between;
+            font-size: 0.8rem;
+            line-height: 100%;
+            margin-bottom: 0.5rem;
           `}
         >
           <span>
-            <FaRegCalendarAlt /> {post.date}
+            <FaRegCalendarAlt
+              css={css`
+                vertical-align: bottom;
+              `}
+            />{" "}
+            Published {post.date}
           </span>
           <span>
-            <FaRegClock /> {post.timeToRead} mins
+            <FaRegClock
+              css={css`
+                vertical-align: bottom;
+              `}
+            />{" "}
+            {post.timeToRead}
           </span>
-          <ReadLink to={post.slug}>read &rarr; </ReadLink>
         </div>
+        <p>{post.excerpt}</p>
+        <ReadLink to={post.slug}>read &rarr; </ReadLink>
       </div>
     </article>
   )

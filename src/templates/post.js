@@ -25,10 +25,15 @@ export const query = graphql`
       }
       body
       fileAbsolutePath
+      fields {
+        readingTime {
+          text
+        }
+      }
     }
   }
 `
-// move to helpers?
+
 const PostTemplate = ({ data: { mdx: post } }) => {
   // get path to source code for post
   const gitHubURL = `https://github.com/Schmidt-Aaron/blog/blob/master/`

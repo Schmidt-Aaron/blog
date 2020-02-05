@@ -29,8 +29,7 @@ There are several ways to center block-level elements
 }
 ```
 
-3. CSS Grid
-   CSS grid shares many of the same positioning properties as Flexbox. In this case the code required to horizontally center a block-level child is practically the same.
+3. CSS Grid shares many of the same positioning properties as Flexbox. In this case the code required to horizontally center a block-level child is practically the same.
 
 ```css
 .parent {
@@ -39,20 +38,21 @@ There are several ways to center block-level elements
 }
 ```
 
-4. Using CSS Position property (oldie)
+4. Using CSS Position property (oldie):
    This is an older technique that relies on a combination of the position and transform/translate properties to center elements. If the width is known you can also set the transform property to a set amount of pixels. However, this is less robust and will break if the width of the element changes.
 
 ```css
 .parent {
-  position: relative; // needed to contain the absolute positioning of the child element to the parent.
+  position: relative;
+  // this is needed to contain the absolute positioning of the child element
 }
+
 .child {
   position: absolute;
-  left: 50%; // moves the leftmost edge of the element 50% from the left side of the parent.
-  transform: translateX(
-    -50%
-  ); // moves the element left 50% of its total width to center it
-  // alternate method: transform: translateX(150px) // the amount translated should equal 50% of the total width of the element.
+  // moves the leftmost edge of the element 50% from the left side of the parent.
+  left: 50%;
+  // moves the element left 50% of its total width to center it
+  transform: translateX(-50%);
 }
 ```
 
@@ -64,8 +64,7 @@ Historically, vertical centering an element was the 'difficult' thing to do. Aga
 
 There are several ways to center block-level elements
 
-1. Flexbox
-   Flexbox makes vertically centering an element easy.
+1. Flexbox: Again, flexbox makes vertically centering an element easy.
 
 ```css
 .parent {
@@ -74,7 +73,7 @@ There are several ways to center block-level elements
 }
 ```
 
-2. CSS Grid
+2. CSS Grid:
    As seen above, CSS grid shares the basic approach as Flexbox.
 
 ```css
@@ -84,13 +83,14 @@ There are several ways to center block-level elements
 }
 ```
 
-3. Using CSS Position property
+3. Using CSS Position property:
    The same approach can also be used to center an element vertically with a couple alterations.
 
 ```css
 .parent {
   position: relative;
 }
+
 .child {
   position: absolute;
   top: 50%;
@@ -98,10 +98,30 @@ There are several ways to center block-level elements
 }
 ```
 
+### Inline Elements
+
+This is quite useful when you need to center text with an inline svg icon or vice-versa.
+
+Text: This approach takes advantage of the magic of `margin:auto`.
+
+```css
+.textElement {
+  line-height: 100%;
+  margin: auto;
+}
+```
+
+SVG or similar: Note that the property you use will depend on the height on the parent and how exactly you want your svg/icon aligned.
+
+```css
+.svg {
+  .vertical-align: middle;
+}
+```
+
 ## Both Horizontal and Vertical Centering
 
-1. Flexbox
-   Flexbox makes vertically centering an element easy.
+1. Flexbox: as you are no doubt aware by now... flexbox makes this task easy.
 
 ```css
 .parent {
@@ -111,8 +131,7 @@ There are several ways to center block-level elements
 }
 ```
 
-2. CSS Grid
-   As seen above, CSS grid shares the basic approach as Flexbox.
+2. CSS Grid: As seen above, CSS grid shares the same approach as Flexbox.
 
 ```css
 .parent {
@@ -122,13 +141,14 @@ There are several ways to center block-level elements
 }
 ```
 
-3. Using CSS Position property
-   To center in both axises we need to combine the transform. This technique can also be used with negative margins instead of the transform. Using negative margins requires you to know the exact dimensions of the element as you will need to set the margins to exactly 50% of the height and width, respectively.
+3. Using CSS Position property:
+   To center in both axises we need to combine the X-axis and Y-axis transforms. Variations of this technique are also super useful to properly place fixed or absolutely positioned elements.
 
 ```css
 .parent {
   position: relative;
 }
+
 .child {
   position: absolute;
   top: 50%;
@@ -137,7 +157,7 @@ There are several ways to center block-level elements
 }
 ```
 
-Using negative margins:
+This technique can also be used with negative margins instead of the transform. Using negative margins requires you to know the exact dimensions of the element as you will need to set the margins to exactly 50% of the height and width, respectively.
 
 ```css
 .parent {

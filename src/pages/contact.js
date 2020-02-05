@@ -13,13 +13,13 @@ const Contact = () => (
     <p>
       The best ways to contact me are via email or LinkedIn. You can also use
       this form Please use the links on the left-hand side of the page to reach
-      out.{" "}
+      out.
     </p>
     <PageFooterLinks
-      leftLinkTo="/"
-      leftLinkText="Home"
-      rightLinkTo="/posts"
-      rightLinkText="Recent Posts"
+      leftLinkTo="/posts"
+      leftLinkText="Recent Posts"
+      rightLinkTo="/"
+      rightLinkText="Home"
     />
   </Layout>
 )

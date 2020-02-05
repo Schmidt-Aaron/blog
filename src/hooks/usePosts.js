@@ -15,7 +15,7 @@ const usePosts = () => {
             title
             slug
             alt
-            date(formatString: "DD-MM-YY")
+            date(formatString: "MMM DD, YYYY")
             status
             tags
             image {
@@ -26,9 +26,13 @@ const usePosts = () => {
               }
             }
           }
-          excerpt
-          timeToRead
+          excerpt(pruneLength: 160)
           fileAbsolutePath
+          fields {
+            readingTime {
+              text
+            }
+          }
         }
       }
     }
@@ -42,9 +46,10 @@ const usePosts = () => {
     alt: post.frontmatter.alt,
     excerpt: post.excerpt,
     tags: post.frontmatter.tags,
-    timeToRead: post.timeToRead,
+    timeToRead: post.fields.readingTime.text,
     path: post.fileAbsolutePath,
     status: post.frontmatter.status,
+    date: post.frontmatter.date,
   }))
 }
 

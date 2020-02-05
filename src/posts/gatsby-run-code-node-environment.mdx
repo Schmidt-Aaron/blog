@@ -1,0 +1,45 @@
+---
+title: Using your Node Environment to Conditionally Run Code with Gatsby
+date: 2020-02-05
+slug: gatsby-run-code-node-environment
+tags: [js", "gatsby", "node", "snippet"]
+status: draft
+---
+
+Do you ever want to run a piece of code only in your development environment? How about only in production? This article will show you how!
+
+## What are environmental variables?
+
+Enter [environmental variables](https://en.wikipedia.org/wiki/Environment_variable). Environment variables are widely used and are an extremely important concept to understand. They are commonly used to store critical API keys and other data that should be hidden from a codebase, or to allow for the use of different API keys / variables based on the environment.
+
+The environment is where the code is being executed. The two most common ones are 'development' and 'production', however, you other environments can be declared and used.
+
+## Using the environment to conditionally run code with Gatsby
+
+This example is specifically for Gatsby, but the same concept can be applied in almost any codebase. First off, it is important to know that Gatsby comes with two environments out-of-the-box.
+
+- If you use `gatsby develop` then you are in the 'development' environment.
+- If you use `gatsby build` or `gatsby serve` you will be in the 'production' environment.
+
+For any Node environment, including Gatsby, you can use `process.env.NODE_ENV` to return the current environment as a string. This allows us to write conditional logic based on which environment we are working in.
+
+### Example code
+
+```JS
+const posts = [post1, post2, ...];
+
+// map through our posts and render a post preview for each
+{posts.map(post => {
+    if (
+      post.status === "publish" ||
+      process.env.NODE_ENV === "development"
+    ) {
+      return <PostPreview key={post.slug} post={post} />
+    }
+  })
+}
+```
+
+The code snippet above takes advantage of my current node environment to conditionally render a post preview component only if the status of the post equals 'publish', OR I am running the code in a 'development' environment. This allows me to see all my incomplete posts when I am developing, but only show the finished - marked as 'publish' - ones in production. Pretty neat!
+
+Oh, and if you are curious, the `post.status` variable is set in the frontmatter of my markdown/MDX files and then passed into my posts via a graphQL query.
