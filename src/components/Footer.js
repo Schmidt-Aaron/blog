@@ -3,18 +3,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { css, jsx } from "@emotion/core"
+import { FaLinkedinIn, FaTwitter, FaRss, FaGithub } from "react-icons/fa"
 
-export default function Footer() {
-  const data = useStaticQuery(graphql`
-    query footerQuery {
-      site {
-        siteMetadata {
-          author
-          siteRepo
-        }
-      }
-    }
-  `)
+const Footer = ({data}) => {
+  const { author, siteRepo, twitter, linkedIn, github } = data.site.siteMetadata
 
   return (
     <footer
@@ -28,13 +20,30 @@ export default function Footer() {
         text-align: center;
       `}
     >
-      © {new Date().getFullYear()}, {data.site.siteMetadata.author}. Made with
-      ❤️ and lots of ☕{` `}
-      <p>
-        {/* Built using <a href="https://www.gatsbyjs.org">Gatsby</a> and hosted on
+      <div>
+        © {new Date().getFullYear()}, {author}. Made with ❤️ and lots of ☕{` `}
+        <p>
+          {/* Built using <a href="https://www.gatsbyjs.org">Gatsby</a> and hosted on
         Netlify */}
-        <a href={data.site.siteMetadata.siteRepo}>Source Code</a>
-      </p>
+          <a href={siteRepo}>Source Code</a>
+        </p>
+      </div>
+      <div>
+        <a href={linkedIn}>
+          <FaLinkedinIn />
+        </a>
+        <a href={github}>
+          <FaGithub />
+        </a>
+        <a href={twitter}>
+          <FaTwitter />
+        </a>
+        <a href={twitter}>
+          <FaRss />
+        </a>
+      </div>
     </footer>
   )
 }
+
+export default props => ()

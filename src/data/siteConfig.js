@@ -14,7 +14,7 @@ module.exports = {
   pathPrefix: null,
   logo: path.resolve(__dirname, "../images/android-chrome-512x512.png"),
   social: {
-    twitter: `aaronmss`,
+    twitter: `https://twitter.com/Aaronmss`,
     email: `hello@aaronms.com`,
     linkedIn: `https://www.linkedin.com/in/aaronmss/`,
     github: `https://github.com/Schmidt-Aaron`,
