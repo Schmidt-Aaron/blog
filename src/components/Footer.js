@@ -24,11 +24,19 @@ const Footer = ({ data }) => {
         align-items: center;
         width: 100%;
         max-width: 960px;
-        text-align: center;
+
+        @media screen and (max-width: 760px) {
+          padding: 0 1rem;
+        }
       `}
     >
       <div>
-        <p>
+        <p
+          css={css`
+            margin: auto;
+            line-height: 100%;
+          `}
+        >
           © {new Date().getFullYear()} {author}.
         </p>
       </div>
@@ -49,7 +57,7 @@ const Footer = ({ data }) => {
             css={css`
               color: #777;
               margin-left: 0.5rem;
-              transition: 0.3 all;
+              transition: 0.5 all ease-in;
               &:hover {
                 color: #2867b2;
               }
@@ -62,7 +70,7 @@ const Footer = ({ data }) => {
             css={css`
               color: #777;
               margin-left: 0.5rem;
-              transition: 0.3 all;
+              transition: 0.5 all ease-in;
               &:hover {
                 color: #24292e;
               }
@@ -75,7 +83,7 @@ const Footer = ({ data }) => {
             css={css`
               color: #777;
               margin-left: 0.5rem;
-              transition: 0.3 all;
+              transition: 0.5 all ease-in;
               &:hover {
                 color: #1da1f2;
               }

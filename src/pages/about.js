@@ -21,11 +21,10 @@ const About = () => (
     </p>
 
     <p>
-      I possess an analytical mentality and enjoy solving hard problems. In my
-      professional career I have had the opportunity to wear many different
-      hats, from managing a medical laboratory, running my own personal training
-      studio to owning the online marketing of a growing fertility clinic. I
-      value learning and continuous self-education.
+      In my professional career I have had the opportunity to wear many
+      different hats, from managing a medical laboratory, running my own
+      personal training studio, to owning the online marketing of a growing
+      fertility clinic. I value learning and continuous self-education.
     </p>
     <p>
       I like to build websites using JavaScript (React + Node + Express). Gatsby

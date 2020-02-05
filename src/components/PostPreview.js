@@ -11,6 +11,7 @@ import ReadLink from "./ReadLink"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
 import DefaultPreviewImage from "./PreviewImage"
+import { FaRegClock, FaRegCalendarAlt } from "react-icons/fa"
 
 const PostPreview = ({ post }) => {
   return (
@@ -63,7 +64,20 @@ const PostPreview = ({ post }) => {
           </Link>
         </h3>
         <p>{post.excerpt}</p>
-        <ReadLink to={post.slug}>read this post &rarr; </ReadLink>
+        <div
+          css={css`
+            display: flex;
+            justify-content: space-between;
+          `}
+        >
+          <span>
+            <FaRegCalendarAlt /> {post.date}
+          </span>
+          <span>
+            <FaRegClock /> {post.timeToRead} mins
+          </span>
+          <ReadLink to={post.slug}>read &rarr; </ReadLink>
+        </div>
       </div>
     </article>
   )

@@ -34,12 +34,16 @@ const Layout = ({ children }) => {
         display: grid;
         grid-gap: 1rem;
         grid-template-rows: 60px 1fr 100px;
+
+        @media screen and (max-width: 600px) {
+          display: block;
+        }
       `}
     >
       <Header siteTitle={data.site.siteMetadata.title} />
       <main
         css={css`
-          margin: 0 auto;
+          margin: 0 auto 2rem;
           max-width: 800px;
           padding: 0 1rem;
         `}

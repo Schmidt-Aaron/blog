@@ -15,7 +15,7 @@ const usePosts = () => {
             title
             slug
             alt
-            date(formatString: "DD-MM-YYYY")
+            date(formatString: "DD-MM-YY")
             status
             tags
             image {

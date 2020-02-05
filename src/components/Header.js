@@ -7,16 +7,16 @@ import styled from "@emotion/styled"
 import Logo from "../images/A_logo.svg"
 import NavMenu from "./NavMenu"
 
-const MenuLink = styled(Link)`
-  margin-right: 1rem;
-  justify-self: flex-end;
-  color: #eee;
-  text-decoration: none;
+// const MenuLink = styled(Link)`
+//   margin-left: 1rem;
+//   justify-self: flex-end;
+//   color: #eee;
+//   text-decoration: none;
 
-  &:hover {
-    color: white;
-  }
-`
+//   &:hover {
+//     color: white;
+//   }
+// `
 
 const Header = ({ siteTitle }) => (
   <header
@@ -26,6 +26,10 @@ const Header = ({ siteTitle }) => (
       margin: 0 auto;
       padding: 0 1rem 0 2rem;
       box-shadow: 0px 0px 10px 0px rgba(25, 25, 25, 0.2);
+
+      @media screen and (max-width: 760px) {
+        padding: 0 1rem 0;
+      }
     `}
   >
     <div

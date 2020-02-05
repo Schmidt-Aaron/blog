@@ -44,7 +44,7 @@ const MenuLink = props => {
   // docs: https://reach.tech/router/api/Link
 
   const linkStyle = css`
-    margin-right: 1rem;
+    margin-left: 1rem;
     justify-self: flex-end;
     color: rgba(0, 100, 202, 1);
     text-decoration: none;
