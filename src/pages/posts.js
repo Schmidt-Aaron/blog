@@ -17,10 +17,10 @@ const Posts = () => {
       <SEO title="Blog" />
       <TitleWithGradient>Blog</TitleWithGradient>
       <p>
-        Below is a collection of snippets, how-tos, and longer form walkthroughs
-        that I have written to better learn in public. My hope is that you find
-        them useful. As always, if you find any errors in any of my writing
-        please submit a pull request, or reach out.
+        Here you will find a collection of snippets, how-tos, and longer form
+        walkthroughs that I have written to better learn in public. My hope is
+        that you find them useful. As always, if you find any errors in any of
+        my writing please submit a pull request, or reach out.
       </p>
       {posts.map(post => {
         if (
