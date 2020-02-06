@@ -84,16 +84,21 @@ const IndexPage = () => (
           </p>
 
           <p>
-            I possess an analytical mentality and enjoy solving hard problems.
             In my professional career I have had the opportunity to wear many
             different hats, from managing a medical laboratory, running my own
             personal training studio to owning the online marketing of a growing
-            fertility clinic. I value learning and continuous self-education.
+            fertility clinic. Throughout it all, I try to approach the problem
+            at hand with an open mind and attention to detail. I value
+            critical-thinking and continuous self-education in both my
+            professional and private lives.
           </p>
           <p>
             I like to build websites using JavaScript (React + Node + Express).
-            Gatsby is my current go-to for most projects as I find it a joy to
-            work with. Sometimes I use WordPress.{" "}
+            My passion is creating excellent user experiences that load quickly
+            and follow SEO best practices. I believe that it is the attention to
+            the small details that make a website great. Gatsby is my current
+            go-to for most projects as I find it a joy to work with. Sometimes I
+            use WordPress.{" "}
           </p>
 
           <p>
