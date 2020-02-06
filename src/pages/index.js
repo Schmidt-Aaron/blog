@@ -59,8 +59,9 @@ const IndexPage = () => (
           <h3>Web Developer | Digital Marketer | Audiobook Fanatic</h3>
           <p>
             Welcome! This website is a work in progress and as such will be
-            undergoing drastic changes to the structure and content starting in
-            February 2020. This page will serve as a placeholder until then.
+            undergoing drastic changes to both the structure and content. I
+            expect the new site to go live later this month (Feb 2020). This
+            page will serve as a placeholder until then.
           </p>
 
           <p>
