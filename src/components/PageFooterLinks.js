@@ -2,6 +2,7 @@
 import React from "react"
 import { css, jsx } from "@emotion/core"
 import ReadLink from "./ReadLink"
+import PropTypes from "prop-types"
 
 const PageFooterLinks = props => {
   const { leftLinkTo, leftLinkText, rightLinkTo, rightLinkText } = props
@@ -17,6 +18,13 @@ const PageFooterLinks = props => {
       <ReadLink to={rightLinkTo}>{rightLinkText}&rarr;</ReadLink>
     </div>
   )
+}
+
+PageFooterLinks.propTypes = {
+  leftLinkText: PropTypes.string,
+  leftLinkTo: PropTypes.string,
+  rightLinkText: PropTypes.string,
+  rightLinkTo: PropTypes.string,
 }
 
 export default PageFooterLinks

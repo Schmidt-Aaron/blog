@@ -12,8 +12,13 @@ This is a quick primer on how to capitalize the first letter of a string using J
 
 On the frontend my preferred solution is to use the CSS property 'text-transform: capitalize'. Typically, I will make a helper class with only this property and then wrap my target word in a span containing my helper class like so.
 
+```css
+.capitalize {
+  text-transform: capitalize;
+}
+```
+
 ```html
-//css .capitalize { text-transform: capitalize; } //html
 <p>
   My name is <span class="capitalize">aaron</span> and I live in
   <span class="capitalize">seattle</span>.

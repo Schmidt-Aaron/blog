@@ -6,11 +6,12 @@
 /** @jsx jsx */
 import styled from "@emotion/styled"
 import { Link } from "gatsby"
+import { COLORS } from "../templates/theme"
 
 const ReadLink = styled(Link)`
   display: inline-block;
   font-size: 0.85rem;
-  color: rgba(0, 100, 202, 1);
+  color: ${COLORS.darkBlue};
 `
 
 export default ReadLink

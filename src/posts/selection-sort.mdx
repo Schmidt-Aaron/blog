@@ -3,7 +3,7 @@ title: What is Selection Sort and How to Implement it in JavaScript
 date: 2020-01-10
 slug: selection-sort
 tags: ["cs", "js", "algorithms"]
-status: draft
+status: publish
 ---
 
 Selection sort is a sorting algorithm that sorts by repeatedly finding the minimum element of the unsorted array then placing that element at the beginning. Every loop the algorithm advances the array index so the lowest element will be added next to the previous lowest element. This repeats until the entire input is sorted.
@@ -15,29 +15,39 @@ Selection sort has a time complexity of O(n^2) due to the two nested loops. This
 ### First Pass
 
 unsorted index = 0;
+
 (2, 9, **1**, 4, 8) => (**1**,2, 9, 4, 8)
+
 1 is the lowest so it is moved to the beginning of the unsorted index.
 
 ### Second Pass
 
 unsorted index = 1;
+
 (1, **2**, 9, 4, 8) => (1, **2**, 9, 4, 8)
+
+No change as the 2nd lowest element is in the correct place.
 
 ### Third Pass
 
 unsorted index = 2;
+
 (1, 2, 9, **4**, 8) => (1, 2, **4**, 9, 8)
+
 4 is the lowest so it is moved to the beginning of the unsorted index.
 
 ### Forth Pass
 
 unsorted index = 3;
+
 (1, 2, 4, 9, **8**) => (1, 2, 4, **8**, 9)
+
 8 is the lowest so it is moved to the beginning of the unsorted index.
 
 ### Fifth Pass
 
 unsorted index = 4;
+
 (1, 2, 4, 8, **9**) => (1, 2, 4, 8, **9**)
 
 ## Implementation

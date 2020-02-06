@@ -81,7 +81,8 @@ function bubbleSort(arr) {
 
       // swap if first element is greater than the second element
       if (first > second) {
-        ;[tempArr[i], tempArr[i + 1]] = [tempArr[i + 1], tempArr[i]] // swap using ES6 destructuring!
+        // swap using ES6 destructuring!
+        ;[tempArr[i], tempArr[i + 1]] = [tempArr[i + 1], tempArr[i]]
         finished = false
       }
 

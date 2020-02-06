@@ -11,17 +11,18 @@ import { css, jsx } from "@emotion/core"
 import Layout from "../components/Layout"
 import ReadLink from "../components/ReadLink"
 import "./post.css"
-import moment from "moment"
 import PropTypes from "prop-types"
 import TitleWithGradient from "../components/TitleWithGradient"
 import SEO from "../components/Seo"
+import { FaRegClock, FaRegCalendarAlt } from "react-icons/fa"
+import PostDetails from "../components/postDetails"
 
 export const query = graphql`
   query($slug: String!) {
     mdx(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         title
-        date
+        date(formatString: "MMM DD, YYYY")
       }
       body
       fileAbsolutePath
@@ -35,6 +36,9 @@ export const query = graphql`
 `
 
 const PostTemplate = ({ data: { mdx: post } }) => {
+  const { title, date } = post.frontmatter
+  const timeToRead = post.fields.readingTime.text
+
   // get path to source code for post
   const gitHubURL = `https://github.com/Schmidt-Aaron/blog/blob/master/`
   // const regex = /^.*blog\/ / works on localhost
@@ -45,7 +49,7 @@ const PostTemplate = ({ data: { mdx: post } }) => {
 
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} />
+      <SEO title={title} />
       <article
         css={css`
           max-width: 600px;
@@ -58,18 +62,9 @@ const PostTemplate = ({ data: { mdx: post } }) => {
             line-height: 4rem;
           `}
         >
-          {post.frontmatter.title}
+          {title}
         </TitleWithGradient>
-        <p
-          css={css`
-            font-size: 0.75rem;
-          `}
-        >
-          Posted on{" "}
-          <time dateTime={post.frontmatter.date}>
-            {moment(post.frontmatter.date).format("LL")}
-          </time>
-        </p>
+        <PostDetails date={date} timeToRead={timeToRead} />
         <MDXRenderer>{post.body}</MDXRenderer>
         <p>
           Find a mistake? Help me fix it by submitting a{" "}

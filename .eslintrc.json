@@ -4,6 +4,7 @@
   },
   "extends": ["react-app", "plugin:jsx-a11y/recommended", "prettier"],
   "plugins": ["react", "emotion", "react-hooks", "jsx-a11y", "import"],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true

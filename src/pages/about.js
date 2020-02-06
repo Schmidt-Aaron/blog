@@ -3,7 +3,6 @@ import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/Seo"
 import TitleWithGradient from "../components/TitleWithGradient"
-import ReadLink from "../components/ReadLink"
 import PageFooterLinks from "../components/PageFooterLinks"
 
 const About = () => (
