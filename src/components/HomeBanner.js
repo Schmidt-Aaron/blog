@@ -10,7 +10,7 @@ const HomeBanner = props => {
   return (
     <div
       css={css`
-        height: 400px;
+        height: 300px;
         width: 100%;
         display: flex;
         align-items: center;

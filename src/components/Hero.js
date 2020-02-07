@@ -73,7 +73,9 @@ const Hero = () => {
       <TextBox>
         <h1>Hi, I'm Aaron.</h1>
 
-        <h2>I am a javascript developer, and an audiobook fanatic.</h2>
+        <h2>
+          I am a javascript developer, digital marketer, and audiobook fanatic.
+        </h2>
       </TextBox>
       <div
         css={css`

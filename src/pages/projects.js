@@ -68,7 +68,7 @@ const Projects = () => {
             <defs>
               <linearGradient
                 id="squareGradientTop"
-                gradientTransform="rotate(90)"
+                gradientTransform="rotate('45deg')"
               >
                 <stop offset="5%" stop-color={COLORS.gradientLight} />
                 <stop offset="95%" stop-color={COLORS.gradientDark} />
@@ -94,6 +94,11 @@ const Projects = () => {
               right: -30%;
               z-index: -1;
               transform: rotate(45deg);
+              transition: 1sec linear all;
+
+              :hover {
+                transform: rotate(270deg);
+              }
             `}
           >
             <defs>
