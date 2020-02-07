@@ -23,12 +23,11 @@ const ImageBackground = styled(BackgroundImage)`
 `
 
 const TextBox = styled("div")`
-  /* background-image: linear-gradient(to top, #ddbbffdd 2rem, #ddbbff00); */
   display: flex;
   flex-direction: column;
   align-self: center;
-  padding: 0 calc((100vw - 550px) / 2) 2rem;
-  width: 100%;
+  padding: 0 2rem 0;
+  max-width: 750px;
   color: white;
 
   h1 {
@@ -74,18 +73,25 @@ const Hero = () => {
         <h1>Hi, I'm Aaron.</h1>
 
         <h2>
-          I am a javascript developer, digital marketer, and audiobook fanatic.
+          I am a JavaScript developer, digital marketer, and audiobook fanatic.
         </h2>
       </TextBox>
       <div
         css={css`
           position: absolute;
-          bottom: 1.5rem;
+          bottom: 5%;
           color: white;
           cursor: pointer;
         `}
       >
-        <p>Learn more</p>
+        <a
+          href="#about"
+          css={css`
+            color: white;
+          `}
+        >
+          Learn more
+        </a>
       </div>
     </ImageBackground>
   )

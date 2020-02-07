@@ -1,6 +1,6 @@
 /**
  *
- * blog post preview component used on posts page
+ * blog post preview component used on homepage -  no image support
  *
  */
 
@@ -9,8 +9,6 @@ import React from "react"
 import { css, jsx } from "@emotion/core"
 import ReadLink from "./ReadLink"
 import { Link } from "gatsby"
-import Image from "gatsby-image"
-import DefaultPreviewImage from "./PreviewImage"
 import PropTypes from "prop-types"
 import { COLORS, BREAKPOINTS } from "../templates/theme"
 import PostDetails from "./PostDetails"
@@ -28,9 +26,14 @@ const PostPreviewShort = ({ post }) => {
         z-index:2;
         position: relative; /* used for gradient bottom  */
         /* padding-bottom: 1rem; */
-        box-shadow: 2px -1px 10px -4px rgba(0, 0, 0, 0.7);
+        box-shadow: 2px 3px 10px -4px rgba(0, 0, 0, 0.7);
         border-radius: 1rem;
         background-color: white;
+
+        &:hover {
+          transform: translateY(2px);
+          box-shadow: 2px 1px 5px -3px rgba(0, 0, 0, 0.7);
+        }
 
         @media screen and (max-width: ${BREAKPOINTS.md}) {
           flex-direction: column;

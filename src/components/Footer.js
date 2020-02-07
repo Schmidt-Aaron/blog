@@ -57,7 +57,7 @@ const Footer = ({ data }) => {
             css={css`
               color: #777;
               margin-left: 0.5rem;
-              transition: 0.5 all ease-in;
+              transition: all 0.5s ease-in; // todo fix svg transitions
               &:hover {
                 color: #2867b2;
               }
@@ -70,7 +70,7 @@ const Footer = ({ data }) => {
             css={css`
               color: #777;
               margin-left: 0.5rem;
-              transition: 0.5 all ease-in;
+              transition: color 0.5s ease-in;
               &:hover {
                 color: #24292e;
               }
@@ -83,7 +83,7 @@ const Footer = ({ data }) => {
             css={css`
               color: #777;
               margin-left: 0.5rem;
-              transition: 0.5 all ease-in;
+              transition: color 0.5s ease-in;
               &:hover {
                 color: #1da1f2;
               }

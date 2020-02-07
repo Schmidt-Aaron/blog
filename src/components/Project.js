@@ -40,6 +40,7 @@ const Project = props => {
     <aside
       css={css`
         height: 400px;
+        max-width: 800px;
         display: flex;
         flex-basis: 95%;
         margin: 1rem auto;

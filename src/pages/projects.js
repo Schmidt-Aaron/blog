@@ -12,6 +12,7 @@ import PostPreviewShort from "../components/PostPreviewShort"
 import { COLORS } from "../templates/theme"
 import HomeBanner from "../components/HomeBanner"
 import Project from "../components/Project"
+import ReadLink from "../components/ReadLink"
 
 const Section = styled(`section`)`
   min-height: 100vh;
@@ -37,22 +38,37 @@ const Projects = () => {
     <Layout>
       <SEO title="Projects" />
       <Hero />
-      <Section>more about me</Section>
-      <Section>
+      <Section id="about">more about me</Section>
+      <Section id="work">
         <HomeBanner title="Recent Work" />
         <Project />
         <Project />
         <Project />
       </Section>
-      <Section>
+      <Section
+        id="posts"
+        css={css`
+          overflow: hidden;
+        `}
+      >
         <HomeBanner title="Recent Posts" />
         <div
           css={css`
-            margin-top: -1rem;
+            margin-top: -3rem;
             position: relative;
+            padding: 1rem;
           `}
         >
           <RecentPosts />
+          <ReadLink
+            to="posts"
+            css={css`
+              display: block;
+              text-align: center;
+            `}
+          >
+            Read More Posts
+          </ReadLink>
           <svg
             width="200"
             height="200"
@@ -72,11 +88,11 @@ const Projects = () => {
           >
             <defs>
               <linearGradient
-                id="squareGradientTop"
-                gradientTransform="rotate('45deg')"
+                id="squareGradient"
+                gradientTransform="rotate(45)"
               >
-                <stop offset="5%" stop-color={COLORS.gradientLight} />
-                <stop offset="95%" stop-color={COLORS.gradientDark} />
+                <stop offset="15%" stopColor={COLORS.gradientLight} />
+                <stop offset="95%" stopColor={COLORS.primaryBlue} />
               </linearGradient>
             </defs>
             <rect
@@ -85,13 +101,13 @@ const Projects = () => {
               height="200"
               width="200"
               stroke="green"
-              fill="url('#squareGradientTop')"
-              stroke-width="2"
+              fill="url('#squareGradient')"
+              strokeWidth="2"
             />
           </svg>
           <svg
-            width="200"
-            height="200"
+            width="150"
+            height="150"
             xmlns="http://www.w3.org/2000/svg"
             css={css`
               position: absolute;
@@ -106,15 +122,6 @@ const Projects = () => {
               }
             `}
           >
-            <defs>
-              <linearGradient
-                id="squareGradient"
-                gradientTransform="rotate(45deg)"
-              >
-                <stop offset="5%" stop-color={COLORS.gradientLight} />
-                <stop offset="95%" stop-color={COLORS.gradientDark} />
-              </linearGradient>
-            </defs>
             <rect
               x="0"
               y="0"
@@ -122,7 +129,43 @@ const Projects = () => {
               width="150"
               stroke="green"
               fill="url('#squareGradient')"
-              stroke-width="2"
+              strokeWidth="2"
+            />
+          </svg>
+          <svg
+            width="50"
+            height="50"
+            xmlns="http://www.w3.org/2000/svg"
+            css={css`
+              position: absolute;
+              bottom: 4%;
+              left: -6%;
+              z-index: 1;
+              transform: rotate(45deg);
+              transition: all 2s ease-in;
+
+              &:hover {
+                transform: rotate(405deg) scale(1.5);
+              }
+            `}
+          >
+            <defs>
+              <linearGradient
+                id="squareGradientBottom"
+                gradientTransform="rotate(45)"
+              >
+                <stop offset="15%" stopColor={COLORS.gradientLight} />
+                <stop offset="95%" stopColor={COLORS.primaryBlue} />
+              </linearGradient>
+            </defs>
+            <rect
+              x="0"
+              y="0"
+              height="50"
+              width="50"
+              stroke="green"
+              fill="url('#squareGradientBottom')"
+              strokeWidth="2"
             />
           </svg>
         </div>

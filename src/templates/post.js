@@ -14,7 +14,6 @@ import "./post.css"
 import PropTypes from "prop-types"
 import TitleWithGradient from "../components/TitleWithGradient"
 import SEO from "../components/Seo"
-import { FaRegClock, FaRegCalendarAlt } from "react-icons/fa"
 import PostDetails from "../components/PostDetails"
 
 export const query = graphql`

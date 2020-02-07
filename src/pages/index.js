@@ -94,12 +94,11 @@ const IndexPage = () => (
             professional and private lives.
           </p>
           <p>
-            I like to build websites using JavaScript (React + Node + Express).
-            My passion is creating excellent user experiences that load quickly
-            and follow SEO best practices. I believe that it is the attention to
-            the small details that make a website great. Gatsby is my current
-            go-to for most projects as I find it a joy to work with. Sometimes I
-            use WordPress.{" "}
+            I like to build websites using JavaScript (React & Node). My passion
+            is creating excellent user experiences that load quickly and follow
+            SEO best practices. My craft is driven by the belief that all great
+            work is created through a unswerving attention to the small details.
+            Sometimes I use WordPress.{" "}
           </p>
 
           <p>
