@@ -14,19 +14,11 @@ const latestPosts = () => {
           frontmatter {
             title
             slug
-            alt
             date(formatString: "MMM DD, YYYY")
             status
             tags
-            image {
-              sharp: childImageSharp {
-                fluid(quality: 80, maxWidth: 150, maxHeight: 150) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
           }
-          excerpt(pruneLength: 160)
+          excerpt(pruneLength: 140)
           fileAbsolutePath
           fields {
             readingTime {
@@ -42,8 +34,6 @@ const latestPosts = () => {
   return data.allMdx.nodes.map(post => ({
     title: post.frontmatter.title,
     slug: post.frontmatter.slug,
-    image: post.frontmatter.image,
-    alt: post.frontmatter.alt,
     excerpt: post.excerpt,
     tags: post.frontmatter.tags,
     timeToRead: post.fields.readingTime.text,
