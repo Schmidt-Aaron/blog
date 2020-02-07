@@ -61,8 +61,13 @@ const Projects = () => {
               position: absolute;
               top: 20%;
               left: -30%;
-              z-index: -1;
+              z-index: 1;
               transform: rotate(45deg);
+              transition: transform 1s ease-in;
+
+              &:hover {
+                transform: rotate(315deg) scale(0.5);
+              }
             `}
           >
             <defs>
@@ -81,7 +86,7 @@ const Projects = () => {
               width="200"
               stroke="green"
               fill="url('#squareGradientTop')"
-              stroke-width="5"
+              stroke-width="2"
             />
           </svg>
           <svg
@@ -92,12 +97,12 @@ const Projects = () => {
               position: absolute;
               bottom: 20%;
               right: -30%;
-              z-index: -1;
+              z-index: 1;
               transform: rotate(45deg);
-              transition: 1sec linear all;
+              transition: all 2s ease-in;
 
-              :hover {
-                transform: rotate(270deg);
+              &:hover {
+                transform: rotate(405deg) scale(0.5);
               }
             `}
           >
@@ -117,7 +122,7 @@ const Projects = () => {
               width="150"
               stroke="green"
               fill="url('#squareGradient')"
-              stroke-width="5"
+              stroke-width="2"
             />
           </svg>
         </div>

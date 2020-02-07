@@ -25,6 +25,7 @@ const PostPreviewShort = ({ post }) => {
         margin: 0 auto 2rem;
         padding: 1rem;
         max-width: 600px;
+        z-index:2;
         position: relative; /* used for gradient bottom  */
         /* padding-bottom: 1rem; */
         box-shadow: 2px -1px 10px -4px rgba(0, 0, 0, 0.7);
