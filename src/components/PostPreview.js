@@ -13,7 +13,7 @@ import Image from "gatsby-image"
 import DefaultPreviewImage from "./PreviewImage"
 import PropTypes from "prop-types"
 import { COLORS, BREAKPOINTS } from "../templates/theme"
-import PostDetails from "./postDetails"
+import PostDetails from "./PostDetails"
 
 const PostPreview = ({ post }) => {
   const { slug, image, alt, title, date, timeToRead, excerpt } = post
