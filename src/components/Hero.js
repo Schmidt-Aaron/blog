@@ -5,12 +5,17 @@ import styled from "@emotion/styled"
 import BackgroundImage from "gatsby-background-image"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { css, jsx } from "@emotion/core"
+import { COLORS } from "../templates/theme"
 
 const ImageBackground = styled(BackgroundImage)`
-  /* background-image: url("../images/jellyfish.jpg"); */
-  background-position: top 20% center;
+  /* background-image: linear-gradient(to top, #ddbbffdd 2rem, #ddbbff00); */
   background-size: cover;
-  height: 100vh;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  clip-path: polygon(0 0, 100% 0, 100% 97%, 53% 97%, 50% 100%, 47% 97%, 0 97%);
 
   + * {
     margin-top: 0;
@@ -21,31 +26,32 @@ const TextBox = styled("div")`
   /* background-image: linear-gradient(to top, #ddbbffdd 2rem, #ddbbff00); */
   display: flex;
   flex-direction: column;
-  height: 100%;
-  justify-content: center;
+  align-self: center;
   padding: 0 calc((100vw - 550px) / 2) 2rem;
   width: 100%;
+  color: white;
 
   h1 {
-    text-shadow: 1px 1px 3px #eeddff66;
-    font-size: 2.25rem;
+    font-size: 4rem;
+    color: white;
+    text-shadow: 3px 2px 2px #565656;
   }
-
-  p,
-  a {
-    color: #222;
-    margin-top: 0;
+  h2 {
+    color: white;
+    text-shadow: 3px 2px 2px #565656;
   }
-
-  a {
-    margin-top: 0.5rem;
+  h3 {
+    color: white;
+  }
+  p {
+    font-size: 1.5rem;
   }
 `
 
 const Hero = () => {
   const { image } = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "boat-calm-waters.jpg" }) {
+      image: file(relativePath: { eq: "back4.jpg" }) {
         sharp: childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid_withWebp
@@ -55,15 +61,30 @@ const Hero = () => {
     }
   `)
 
+  // Photo by Mathyas Kurmann on Unsplash https://unsplash.com/@mathyaskurmann
+
+  const backgroundStack = [
+    `linear-gradient(to right, ${COLORS.gradientLightTransparent}, ${COLORS.gradientDarkTransparent})`,
+    image.sharp.fluid,
+  ]
+
   return (
-    <ImageBackground tag="section" fluid={image.sharp.fluid}>
+    <ImageBackground tag="section" fluid={backgroundStack}>
       <TextBox>
-        <h1>Hello.</h1>
-        <h2>I'm Aaron, a full stack developer living in beautiful Seattle.</h2>
-        <p>
-          <Link to={"/about"}>Learn about me &rarr;</Link>
-        </p>
+        <h1>Hi, I'm Aaron.</h1>
+
+        <h2>I am a javascript developer, and an audiobook fanatic.</h2>
       </TextBox>
+      <div
+        css={css`
+          position: absolute;
+          bottom: 1.5rem;
+          color: white;
+          cursor: pointer;
+        `}
+      >
+        <p>Learn more</p>
+      </div>
     </ImageBackground>
   )
 }
