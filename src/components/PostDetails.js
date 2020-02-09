@@ -22,7 +22,7 @@ export default function PostDetails(props) {
             vertical-align: bottom;
           `}
         />{" "}
-        Published {date}
+        {date}
       </span>
       <span>
         <FaRegClock

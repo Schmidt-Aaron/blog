@@ -36,9 +36,9 @@ const Layout = ({ children }) => {
         grid-gap: 1rem;
         grid-template-rows: 60px 1fr 100px;
 
-        @media screen and (max-width: 600px) {
+        /* @media screen and (max-width: 600px) {
           display: block;
-        }
+        } */
       `}
     >
       <Header siteTitle={data.site.siteMetadata.title} />

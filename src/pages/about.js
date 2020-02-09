@@ -43,7 +43,7 @@ const About = () => (
       >
         see what I am currently reading
       </a>
-      ), code, cooking, kickball, hiking, and drinking a good IPA.
+      ), code, cooking, kickball, hiking, and occasionally drinking a good IPA.
     </p>
 
     <PageFooterLinks
