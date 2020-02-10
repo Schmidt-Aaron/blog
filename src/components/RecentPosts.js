@@ -3,7 +3,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import { css, jsx } from "@emotion/core"
-import SEO from "../components/Seo"
 import latestPosts from "../hooks/latestPosts"
 import PostPreviewShort from "../components/PostPreviewShort"
 import { COLORS } from "../templates/theme"
@@ -24,7 +23,12 @@ const Posts = () => {
   return (
     <>
       {posts.map(post => {
-        return <PostPreviewShort key={post.slug} post={post} />
+        if (
+          post.status === "publish" ||
+          process.env.NODE_ENV === "development"
+        ) {
+          return <PostPreviewShort key={post.slug} post={post} />
+        }
       })}
     </>
   )

@@ -10,8 +10,7 @@ import PageFooterLinks from "../components/PageFooterLinks"
 
 const Posts = () => {
   const posts = usePosts()
-  // console.log(posts)
-  //TODO fix posts query
+  //TODO fix posts query or filter after the fact
   return (
     <Layout>
       <SEO title="Blog" />
@@ -20,7 +19,8 @@ const Posts = () => {
         Here you will find a collection of snippets, how-tos, and longer form
         walkthroughs that I have written to facilitate my own personal learning.
         My hope is that you find them useful. As always, if you find any errors
-        in any of my writing please submit a pull request, or reach out.
+        in my writing please help me fix them by submitting a pull request, or
+        reaching out.
       </p>
       {posts.map(post => {
         if (
