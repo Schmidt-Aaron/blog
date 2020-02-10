@@ -15,6 +15,7 @@ const HomeBanner = props => {
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
         background-image: linear-gradient(
           to right,
           ${COLORS.gradientLight},
@@ -30,6 +31,17 @@ const HomeBanner = props => {
       >
         {props.title}
       </h2>
+      <div
+        css={css`
+          border: 1px solid white;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          height: 10%;
+          width: 4%;
+          z-index: 2;
+        `}
+      ></div>
     </div>
   )
 }

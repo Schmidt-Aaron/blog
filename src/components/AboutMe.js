@@ -4,11 +4,6 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import styled from "@emotion/styled"
 import { css, jsx } from "@emotion/core"
-import Layout from "../templates/homeLayout"
-import SEO from "../components/Seo"
-import Hero from "../components/Hero"
-import latestPosts from "../hooks/latestPosts"
-import PostPreviewShort from "../components/PostPreviewShort"
 import { COLORS } from "../templates/theme"
 import ReadLink from "../components/ReadLink"
 import Image from "gatsby-image"
@@ -61,8 +56,8 @@ const AboutMe = () => {
             fixed={image.sharp.fixed}
             style={{ position: "absolute" }}
             css={css`
-              height: 380px;
-              width: 380px;
+              height: 390px;
+              width: 390px;
               border-radius: 50%;
               top: 50%;
               right: 50%;
@@ -80,21 +75,25 @@ const AboutMe = () => {
             font-size: 1.2rem;
           `}
         >
-          <h3
+          <h2
             css={css`
-              font-size: 1.6rem;
+              font-size: 1.9rem;
+              line-height: 2.1rem;
+              color: rgba(0, 0, 0, 0.8);
             `}
           >
-            My name is Aaron Schmidt. I like to build things for the web. My
-            passion is developing fast and responsive sites that deliver an
-            excellent user experience.
-          </h3>
+            My name is Aaron Schmidt. I build things for the web.
+          </h2>
+          {/* <p>
+            I like to create beautiful user experiences with a strong technical
+            foundation of excellent load speeds and search engine optimization
+            out of the box. Your customers matter to me.
+          </p> */}
 
           <p>
             Do you have a project, idea, or problem that you would like to
             discuss?
           </p>
-
           <ReadLink to="/contact">Let's talk.</ReadLink>
         </div>
       </div>
