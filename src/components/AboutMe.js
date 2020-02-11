@@ -21,7 +21,7 @@ const AboutMe = () => {
     query {
       image: file(relativePath: { eq: "me.jpg" }) {
         sharp: childImageSharp {
-          fixed(quality: 85, width: 380) {
+          fixed(quality: 85, width: 340) {
             ...GatsbyImageSharpFixed_withWebp_tracedSVG
           }
         }
@@ -33,22 +33,24 @@ const AboutMe = () => {
     <Section id="about">
       <div
         css={css`
-          display: flex;
-
+          display: grid;
+          grid-gap: 2rem;
+          grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+          grid-template-rows: auto;
+          place-items: center center;
           padding: 1rem;
         `}
       >
         <div
           css={css`
-            width: 400px;
-            height: 400px;
+            width: 350px;
+            height: 350px;
             background: linear-gradient(
               to right,
               ${COLORS.gradientLight},
               ${COLORS.gradientDark}
             );
             border-radius: 50%;
-            margin-right: 4rem;
             position: relative;
           `}
         >
@@ -56,8 +58,8 @@ const AboutMe = () => {
             fixed={image.sharp.fixed}
             style={{ position: "absolute" }}
             css={css`
-              height: 390px;
-              width: 390px;
+              height: 97%;
+              width: 97%;
               border-radius: 50%;
               top: 50%;
               right: 50%;
@@ -67,7 +69,6 @@ const AboutMe = () => {
         </div>
         <div
           css={css`
-            max-width: 500px;
             padding: 1rem;
             display: flex;
             flex-direction: column;

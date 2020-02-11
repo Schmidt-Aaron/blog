@@ -11,9 +11,9 @@ const Contact = () => (
     <SEO title="Contact Aaron" />
     <TitleWithGradient>Say Hello</TitleWithGradient>
     <p>
-      The best ways to contact me are via email or LinkedIn. You can also use
-      this form Please use the links on the left-hand side of the page to reach
-      out.
+      The best ways to contact me are via{" "}
+      <a href="mailto:hello&#64;aaronms&#46;com">email</a> or via LinkedIn. You
+      can use the links on the bottom right-hand side of the page.
     </p>
     <PageFooterLinks
       leftLinkTo="/posts"
