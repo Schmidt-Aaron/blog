@@ -8,6 +8,7 @@ import Hero from "../components/Hero"
 import RecentPosts from "../components/RecentPosts"
 import AboutMe from "../components/AboutMe"
 import RecentWork from "../components/RecentWork"
+import "../templates/tempStyles.css"
 
 const Index = () => {
   return (
