@@ -88,6 +88,7 @@ const Hero = () => {
           href="#about"
           css={css`
             color: white;
+            text-decoration: none;
           `}
         >
           Learn more

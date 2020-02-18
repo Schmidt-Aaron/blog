@@ -85,11 +85,14 @@ const PostPreviewShort = ({ post }) => {
           <ReadLink
             to={slug}
             css={css`
-              position: absolute;
-              right: 0;
+              width: 100%;
+              text-align: end;
+              position: relative;
+              right: 0px;
+              bottom: -0.5rem;
             `}
           >
-            read &rarr;{" "}
+            read more &rarr;{" "}
           </ReadLink>
         </p>
       </div>

@@ -3,6 +3,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { css, jsx } from "@emotion/core"
 import styled from "@emotion/styled"
+import { COLORS } from "../templates/theme"
 
 // const MenuLink = styled(Link)`
 //   margin-right: 1rem;
@@ -46,11 +47,12 @@ const MenuLink = props => {
   const linkStyle = css`
     margin-left: 1rem;
     justify-self: flex-end;
-    color: rgba(0, 100, 202, 1);
+    color: ${COLORS.darkBlue};
     text-decoration: none;
+    font-family: Montserrat;
 
     &:hover {
-      color: rgba(0, 100, 202, 0.8);
+      color: ${COLORS.darkBlueHover};
     }
 
     &:after {
@@ -58,7 +60,7 @@ const MenuLink = props => {
       display: block;
       width: 0%;
       padding-top: 0px;
-      border-bottom: 1px solid #11998e; /* TODO change color*/
+      border-bottom: 1px solid ${COLORS.gradientDark}; /* TODO change color*/
       transition: all 0.3s ease-in;
     }
 

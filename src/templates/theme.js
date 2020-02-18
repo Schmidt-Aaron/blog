@@ -19,4 +19,5 @@ export const COLORS = {
   primaryBlue: "rgba(62, 148, 236, 1)",
   primaryBlueLight: "rgba(62, 148, 236, 0.8)",
   darkBlue: "rgba(0, 100, 202, 1);",
+  darkBlueHover: "rgba(0, 100, 202, 0.8);",
 }
