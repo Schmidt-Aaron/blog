@@ -13,10 +13,10 @@ const Projects = () => {
   return (
     <Layout>
       <SEO title="Projects" />
-      <Hero />
-      <AboutMe />
+      {/* <Hero /> */}
+      {/* <AboutMe /> */}
       {/* <RecentWork /> */}
-      <RecentPosts />
+      {/* <RecentPosts /> */}
     </Layout>
   )
 }
