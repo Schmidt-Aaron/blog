@@ -9,7 +9,11 @@ import { graphql, useStaticQuery } from "gatsby"
 const latestPosts = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMdx(limit: 5, sort: { fields: frontmatter___date, order: DESC }) {
+      allMdx(
+        limit: 5
+        sort: { fields: frontmatter___date, order: DESC }
+        filter: { frontmatter: { status: { eq: "publish" } } }
+      ) {
         nodes {
           frontmatter {
             title
