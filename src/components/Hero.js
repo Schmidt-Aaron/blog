@@ -45,11 +45,12 @@ const TextBox = styled("div")`
   p {
     font-size: 1.5rem;
   }
+
 @media screen and (max-width: ${BREAKPOINTS.md}{
     h1 {
       font-size: 3rem;
       color: white;
-    text-shadow: 3px 2px 2px #565656;
+      text-shadow: 3px 2px 2px #565656;
     }
     h2 {
       font-size: 1.5rem;
