@@ -5,7 +5,7 @@ import styled from "@emotion/styled"
 import BackgroundImage from "gatsby-background-image"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { css, jsx } from "@emotion/core"
-import { COLORS } from "../templates/theme"
+import { COLORS, BREAKPOINTS } from "../templates/theme"
 
 const ImageBackground = styled(BackgroundImage)`
   /* background-image: linear-gradient(to top, #ddbbffdd 2rem, #ddbbff00); */
@@ -44,6 +44,14 @@ const TextBox = styled("div")`
   }
   p {
     font-size: 1.5rem;
+  }
+@media screen and (max-width: ${BREAKPOINTS.md}{
+    h1{
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+    }
   }
 `
 
