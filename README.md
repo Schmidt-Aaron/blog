@@ -10,6 +10,7 @@ Welcome to my personal website (WIP). The site will act as a portfolio and blog.
 - Hosted on Netlify
 - CI from master branch
 - Prettier + Eslint code formatting
+- prism code highlighting
 - and more...
 
 TODO - implement updated structure and launch!

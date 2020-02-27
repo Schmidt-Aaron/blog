@@ -10,8 +10,7 @@ const TitleWithGradient = styled("h1")`
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 5rem;
-  display: inline-block;
+  display: block;
 `
 
 export const HorizontalGradientBar = styled("div")`

@@ -3,7 +3,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { css, jsx } from "@emotion/core"
 import styled from "@emotion/styled"
-import { COLORS } from "../templates/theme"
+import { COLORS, BREAKPOINTS } from "../templates/theme"
 
 // const MenuLink = styled(Link)`
 //   margin-right: 1rem;
@@ -66,6 +66,11 @@ const MenuLink = props => {
 
     &:hover:after {
       width: 100%;
+    }
+
+    @media screen and (max-width: ${BREAKPOINTS.md}) {
+      margin-left: 0.6rem;
+      font-size: 0.9rem;
     }
   `
 

@@ -15,6 +15,7 @@ import PropTypes from "prop-types"
 import TitleWithGradient from "../components/TitleWithGradient"
 import SEO from "../components/Seo"
 import PostDetails from "../components/PostDetails"
+import { BREAKPOINTS, COLORS } from "../templates/theme"
 
 export const query = graphql`
   query($slug: String!) {
@@ -59,6 +60,11 @@ const PostTemplate = ({ data: { mdx: post } }) => {
           css={css`
             font-size: 3rem;
             line-height: 4rem;
+
+            @media screen and (max-width: ${BREAKPOINTS.md}) {
+              font-size: 2rem;
+              line-height: 2.5rem;
+            }
           `}
         >
           {title}

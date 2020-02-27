@@ -6,6 +6,7 @@ import { css, jsx } from "@emotion/core"
 import styled from "@emotion/styled"
 import Logo from "../images/A_logo.svg"
 import NavMenu from "./NavMenu"
+import { BREAKPOINTS } from "../templates/theme"
 
 // const MenuLink = styled(Link)`
 //   margin-left: 1rem;
@@ -27,7 +28,7 @@ const Header = ({ siteTitle }) => (
       padding: 0 1rem 0 2rem;
       box-shadow: 0px 0px 10px 0px rgba(25, 25, 25, 0.2);
 
-      @media screen and (max-width: 760px) {
+      @media screen and (max-width: ${BREAKPOINTS.md}) {
         padding: 0 1rem 0;
       }
     `}
@@ -47,6 +48,10 @@ const Header = ({ siteTitle }) => (
           font-size: 1.2rem;
           font-weight: 400;
           margin: 0;
+
+          @media screen and (max-width: ${BREAKPOINTS.md}) {
+            font-size: 1.1rem;
+          }
         `}
       >
         <Link

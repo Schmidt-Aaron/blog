@@ -43,7 +43,9 @@ const Layout = ({ children }) => {
       <main
         css={css`
           margin: 0 auto 2rem;
+          width: 100%;
           max-width: 600px;
+          min-width: 0; /* prevent overflows at small widths*/
           padding: 0 1rem;
         `}
       >
