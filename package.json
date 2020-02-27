@@ -4,7 +4,10 @@
   "description": "Aaron Schmidt's personal website and blog",
   "version": "0.1.0",
   "author": "Aaron Schmidt <hello@aaronms.com> (https://aaronms.com)",
-  "repository": "https://github.com/Schmidt-Aaron",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
   "dependencies": {
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
@@ -27,7 +30,6 @@
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gatsby-remark-copy-linked-files": "^2.1.36",
     "gatsby-remark-images": "^3.1.42",
-    "gatsby-remark-prismjs": "^3.3.30",
     "gatsby-remark-reading-time": "^1.1.0",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-remark": "^2.6.48",
@@ -81,10 +83,6 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "analyze": "cross-env ANALYZE_BUNDLE_SIZE=true gatsby build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
