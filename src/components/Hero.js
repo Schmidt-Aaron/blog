@@ -35,13 +35,16 @@ const TextBox = styled("div")`
     color: white;
     text-shadow: 3px 2px 2px #565656;
   }
+
   h2 {
     color: white;
     text-shadow: 3px 2px 2px #565656;
   }
+
   h3 {
     color: white;
   }
+
   p {
     font-size: 1.5rem;
   }

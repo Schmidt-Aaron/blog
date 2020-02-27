@@ -10,11 +10,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { css, jsx } from "@emotion/core"
-
+import { MDXProvider } from "@mdx-js/react"
+import mdxComponents from "./mdx"
 import Header from "./Header"
 import "./layout.css"
 import Footer from "./Footer"
 import { HorizontalGradientBar } from "./TitleWithGradient"
+// import CodeBlock from "./mdx/CodeBlock"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -35,10 +37,6 @@ const Layout = ({ children }) => {
         display: grid;
         grid-gap: 1rem;
         grid-template-rows: 60px 1fr 100px;
-
-        /* @media screen and (max-width: 600px) {
-          display: block;
-        } */
       `}
     >
       <Header siteTitle={data.site.siteMetadata.title} />
@@ -49,7 +47,7 @@ const Layout = ({ children }) => {
           padding: 0 1rem;
         `}
       >
-        {children}
+        <MDXProvider components={mdxComponents}>{children}</MDXProvider>
       </main>
       <Footer />
       <HorizontalGradientBar />

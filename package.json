@@ -3,7 +3,8 @@
   "private": true,
   "description": "Aaron Schmidt's personal website and blog",
   "version": "0.1.0",
-  "author": "Aaron Schmidt",
+  "author": "Aaron Schmidt <hello@aaronms.com> (https://aaronms.com)",
+  "repository": "https://github.com/Schmidt-Aaron",
   "dependencies": {
     "@emotion/core": "^10.0.27",
     "@emotion/styled": "^10.0.27",
@@ -31,6 +32,8 @@
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-remark": "^2.6.48",
     "gatsby-transformer-sharp": "^2.3.13",
+    "prism-react-renderer": "^1.0.2",
+    "prism-themes": "^1.3.0",
     "prismjs": "^1.19.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
