@@ -13,8 +13,10 @@ import { css, jsx } from "@emotion/core"
 
 import Header from "../components/Header"
 import "../components/layout.css"
+import "./scrollbar.css"
 import Footer from "../components/Footer"
 import { HorizontalGradientBar } from "../components/TitleWithGradient"
+import Helmet from "react-helmet"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -35,12 +37,16 @@ const Layout = ({ children }) => {
         display: grid;
         grid-gap: 1rem;
         grid-template-rows: 60px 1fr 100px;
-
-        /* @media screen and (max-width: 600px) {
-          display: block;
-        } */
       `}
     >
+      {/* <Helmet> */}
+      {/* <meta
+          property="og:image"
+          content={
+            this.props.pageContext.images[0].localFile.childImageSharp.fluid.src
+          }
+        /> */}
+      {/* </Helmet> */}
       <Header siteTitle={data.site.siteMetadata.title} />
       <main
         css={css`

@@ -16,7 +16,7 @@ import Header from "./Header"
 import "./layout.css"
 import Footer from "./Footer"
 import { HorizontalGradientBar } from "./TitleWithGradient"
-// import CodeBlock from "./mdx/CodeBlock"
+import Helmet from "react-helmet"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -39,6 +39,14 @@ const Layout = ({ children }) => {
         grid-template-rows: 60px 1fr 100px;
       `}
     >
+      {/* <Helmet>
+        <meta
+          property="og:image"
+          content={
+            this.props.pageContext.images[0].localFile.childImageSharp.fluid.src
+          }
+        />
+      </Helmet> */}
       <Header siteTitle={data.site.siteMetadata.title} />
       <main
         css={css`

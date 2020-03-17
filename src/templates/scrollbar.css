@@ -1,0 +1,21 @@
+/* todo refactor into global emotion tag!!! */
+
+html {
+  overflow: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #ebebeb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(17, 153, 142, 1);
+}

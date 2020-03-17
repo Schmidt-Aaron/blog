@@ -13,7 +13,7 @@ import "../templates/tempStyles.css"
 const Index = () => {
   return (
     <Layout>
-      <SEO title="Homepage" />
+      <SEO title="Aaron's personal website" />
       <Hero />
       <AboutMe />
       {/* <RecentWork /> */}

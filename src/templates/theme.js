@@ -18,6 +18,6 @@ export const COLORS = {
   gradientDarkTransparent: "rgba(17, 153, 142, 0.4)",
   primaryBlue: "rgba(62, 148, 236, 1)",
   primaryBlueLight: "rgba(62, 148, 236, 0.8)",
-  darkBlue: "rgba(0, 100, 202, 1);",
-  darkBlueHover: "rgba(0, 100, 202, 0.8);",
+  darkBlue: "rgba(0, 100, 202, 1)",
+  darkBlueHover: "rgba(0, 100, 202, 0.8)",
 }

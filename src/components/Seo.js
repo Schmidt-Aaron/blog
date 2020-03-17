@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+// import ogImage from "../images/website_hero2_rect.jpg"
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -19,6 +20,7 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            url
           }
         }
       }
@@ -52,6 +54,14 @@ function SEO({ description, lang, meta, title }) {
           content: `website`,
         },
         {
+          property: `og:url`,
+          content: site.siteMetadata.url,
+        },
+        // {
+        //   property: `og:image`,
+        //   content: { ogImage },
+        // },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -68,25 +78,7 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    >
-      {/* <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="../images/favicon/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="../images/favicon/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="../images/favicon/favicon-16x16.png"
-      /> */}
-    </Helmet>
+    ></Helmet>
   )
 }
 

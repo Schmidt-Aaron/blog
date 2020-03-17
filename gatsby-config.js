@@ -16,6 +16,7 @@ const {
   themeColor,
   backgroundColor,
   logo,
+  url,
 } = siteConfig
 
 module.exports = {

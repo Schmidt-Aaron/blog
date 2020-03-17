@@ -9,3 +9,5 @@
 - sticky header + animation(spring?)
 - refactor styles -- use Global emotion
 - add tests?
+- style scroll bars
+- refactor home layout out
