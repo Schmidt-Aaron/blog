@@ -8,7 +8,10 @@ import PageFooterLinks from "../components/PageFooterLinks"
 
 const Contact = () => (
   <Layout>
-    <SEO title="Contact Aaron" />
+    <SEO
+      title="Contact Aaron"
+      description="Do you have a tough problem? I am always happy to lend an ear or a hand."
+    />
     <TitleWithGradient>Say Hello</TitleWithGradient>
     <p>
       The best ways to contact me are via{" "}

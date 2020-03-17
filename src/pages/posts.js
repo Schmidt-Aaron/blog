@@ -13,7 +13,10 @@ const Posts = () => {
   //TODO fix posts query or filter after the fact
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO
+        title="Blog"
+        description="Welcome to the home of my blog. Here you will find a collection of coding how-tos, walkthroughs, and the occasional tidbit about my hobbies."
+      />
       <TitleWithGradient>Blog</TitleWithGradient>
       <p>
         Here you will find a collection of snippets, how-tos, and longer form

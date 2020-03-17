@@ -7,7 +7,7 @@ import PageFooterLinks from "../components/PageFooterLinks"
 
 const About = () => (
   <Layout>
-    <SEO title="About Aaron" />
+    <SEO title="About Aaron" description="Hi, I am a web developer living in the Pacific NorthWest. Got a problem? Let's Talk." />
     <TitleWithGradient>About Me</TitleWithGradient>
     <p>
       I am a web developer and digital marketer living in the beautiful Pacific
