@@ -1,0 +1,128 @@
+---
+title: Simple JS Pathfinding Algorithm for a 2D Array
+date: 2020-03-13
+slug: pathfinding-2d-array
+tags: ["js", "algorithms"]
+status: draft
+---
+
+```js
+const solution = (maze, startRow, startCol, destRow, destCol) => {
+  let currRow = startRow
+  let currCol = startCol
+  let prevRow = null
+  let prevCol = null
+  let finished = false
+
+  function checkLeft(row, col) {
+    if (col === 0) return false
+    if (col > 0) {
+      return maze[row][col - 1] === 0
+    }
+  }
+
+  function checkRight(row, col) {
+    if (col === maze[row].length - 1) return false
+    if (col < maze[row].length - 1) {
+      return maze[row][col + 1] === 0
+    }
+  }
+
+  function checkTop(row, col) {
+    if (row === 0) return false
+    if (row > 0) {
+      return maze[row - 1][col] === 0
+    }
+  }
+
+  function checkBottom(row, col) {
+    if (row === maze.length - 1) return false
+    if (row < maze.length - 1) {
+      return maze[row + 1][col] === 0
+    }
+  }
+
+  // returns false if no legal move off the bat
+  if (
+    !checkBottom(startRow, startCol) &&
+    !checkTop(startRow, startCol) &&
+    !checkLeft(startRow, startCol) &&
+    !checkRight(startRow, startCol)
+  )
+    return false
+
+  while (finished === false) {
+    let moved = false
+
+    //move left?
+    if (
+      moved === false &&
+      checkLeft(currRow, currCol) &&
+      currCol - 1 !== prevCol
+    ) {
+      prevCol = currCol
+      currCol -= 1
+      prevRow = null
+      moved = true
+    }
+
+    // move up
+    if (
+      moved === false &&
+      checkTop(currRow, currCol) &&
+      currRow - 1 !== prevRow
+    ) {
+      moved = true
+      prevCol = null
+      prevRow = currRow
+      currRow -= 1
+    }
+
+    // move down
+    if (
+      moved === false &&
+      checkBottom(currRow, currCol) &&
+      currRow + 1 !== prevRow
+    ) {
+      moved = true
+      prevCol = null
+      prevRow = currRow
+      currRow += 1
+    }
+
+    // move right
+    if (
+      moved === false &&
+      checkRight(currRow, currCol) &&
+      currCol + 1 !== prevCol
+    ) {
+      moved = true
+      prevCol = currCol
+      prevRow = null
+      currCol += 1
+    }
+
+    console.log(currRow, currCol)
+
+    // exit condition if true
+    if (currCol === destCol && currRow === destRow) {
+      return true
+    }
+
+    if (!moved) return false
+  }
+}
+
+solution(
+  [
+    [1, 0, 0, 1],
+    [1, 1, 0, 1],
+    [1, 0, 0, 1],
+    [0, 0, 1, 1],
+  ],
+  3,
+  0,
+  0,
+  1
+)
+```
