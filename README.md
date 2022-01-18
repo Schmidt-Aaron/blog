@@ -1,6 +1,6 @@
 # Hi!
 
-Welcome to my personal website (WIP). The site will act as a portfolio and blog. This site was built using Gatsby basic starter that is in the process of being customized. I am currently only serving up a basic landing page as I work on customizing the structure and features to suit my needs. The main site will be launched Feb 2020.
+Welcome to my personal website. The site will act as a portfolio and blog. This site was built using Gatsby basic starter that is in the process of being customized. 
 
 ## Tech
 
@@ -13,4 +13,5 @@ Welcome to my personal website (WIP). The site will act as a portfolio and blog.
 - prism code highlighting
 - and more...
 
-TODO - implement updated structure and launch!
+TODO
+- Add more features and content :)
